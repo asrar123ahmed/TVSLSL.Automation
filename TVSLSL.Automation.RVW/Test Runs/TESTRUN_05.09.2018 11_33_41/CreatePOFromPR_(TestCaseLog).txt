@@ -1,0 +1,6 @@
+9/5/2018 11:33:41 AM TEST CASE STARTED: CreatePOFromPR
+9/5/2018 11:33:44 AM Navigating to URL: http://testing.tvslsl.in/RVW/extui/vwrt/LaunchPanel.htm
+9/5/2018 11:33:52 AM Input Text "tvsuser" (element 'User ID' on page 'Login')
+9/5/2018 11:33:52 AM Input Text "*****************" (element 'Password' on page 'Login')
+9/5/2018 11:33:52 AM Click (element 'Sign In' on page 'Login')
+9/5/2018 11:33:56 AM Input Text (Key-by-Key) "View Purchase Request" (element 'Header Search' on page 'SelfServiceHome')

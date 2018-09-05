@@ -1,0 +1,22 @@
+9/5/2018 10:54:07 AM TEST CASE STARTED: CreatePOFromPR
+9/5/2018 10:54:10 AM Navigating to URL: http://testing.tvslsl.in/RVW/extui/vwrt/LaunchPanel.htm
+9/5/2018 10:54:18 AM Input Text "tvsuser" (element 'User ID' on page 'Login')
+9/5/2018 10:54:20 AM Input Text "*****************" (element 'Password' on page 'Login')
+9/5/2018 10:54:21 AM Click (element 'Sign In' on page 'Login')
+9/5/2018 10:54:25 AM Input Text (Key-by-Key) "View Purchase Request" (element 'Header Search' on page 'SelfServiceHome')
+9/5/2018 10:54:43 AM Click (element 'First Search Suggestion Option' on page 'SelfServiceHome')
+9/5/2018 10:54:48 AM Input Text "06/08/2018" (element 'PR Date From' on page 'ViewPurchaseRequest')
+9/5/2018 10:54:49 AM Press Return Key
+9/5/2018 10:54:51 AM Input Text "06/09/2018" (element 'PR Date To' on page 'ViewPurchaseRequest')
+9/5/2018 10:54:51 AM Press Return Key
+9/5/2018 10:54:53 AM Click (element 'Search' on page 'ViewPurchaseRequest')
+9/5/2018 10:54:59 AM Click (element 'Go Back' on page 'ViewPurchaseRequest')
+9/5/2018 10:54:59 AM Input Text (Key-by-Key) "Convert Purchase Request To Order" (element 'Header Search' on page 'SelfServiceHome')
+9/5/2018 10:55:21 AM Click (element 'First Search Suggestion Option' on page 'SelfServiceHome')
+9/5/2018 10:55:55 AM Input Text "PIR0001962/1819" (element 'PR Number From' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 10:55:55 AM Press Return Key
+9/5/2018 10:56:00 AM Input Text "PIR0001962/1819" (element 'PR Number To' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 10:56:00 AM Press Return Key
+9/5/2018 10:56:13 AM Click (element 'Search' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 10:56:21 AM Input Text "BREEXBES4N" (element 'Supplier Code' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 10:56:23 AM Click (element 'Create Order Doc' on page 'ConvertPurchaseRequestToOrder')

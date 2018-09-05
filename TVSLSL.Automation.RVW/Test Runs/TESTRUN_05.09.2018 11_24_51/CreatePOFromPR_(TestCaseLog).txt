@@ -1,0 +1,24 @@
+9/5/2018 11:24:51 AM TEST CASE STARTED: CreatePOFromPR
+9/5/2018 11:24:54 AM Navigating to URL: http://testing.tvslsl.in/RVW/extui/vwrt/LaunchPanel.htm
+9/5/2018 11:25:00 AM Input Text "tvsuser" (element 'User ID' on page 'Login')
+9/5/2018 11:25:01 AM Input Text "*****************" (element 'Password' on page 'Login')
+9/5/2018 11:25:01 AM Click (element 'Sign In' on page 'Login')
+9/5/2018 11:25:06 AM Input Text (Key-by-Key) "View Purchase Request" (element 'Header Search' on page 'SelfServiceHome')
+9/5/2018 11:25:23 AM Click (element 'First Search Suggestion Option' on page 'SelfServiceHome')
+9/5/2018 11:25:28 AM Input Text "06/08/2018" (element 'PR Date From' on page 'ViewPurchaseRequest')
+9/5/2018 11:25:28 AM Press Return Key
+9/5/2018 11:25:30 AM Input Text "06/09/2018" (element 'PR Date To' on page 'ViewPurchaseRequest')
+9/5/2018 11:25:30 AM Press Return Key
+9/5/2018 11:25:33 AM Click (element 'Search' on page 'ViewPurchaseRequest')
+9/5/2018 11:25:38 AM Click (element 'Go Back' on page 'ViewPurchaseRequest')
+9/5/2018 11:25:39 AM Input Text (Key-by-Key) "Convert Purchase Request To Order" (element 'Header Search' on page 'SelfServiceHome')
+9/5/2018 11:26:00 AM Click (element 'First Search Suggestion Option' on page 'SelfServiceHome')
+9/5/2018 11:26:05 AM Input Text "PIR0001962/1819" (element 'PR Number From' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 11:26:06 AM Press Return Key
+9/5/2018 11:26:08 AM Input Text "PIR0001962/1819" (element 'PR Number To' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 11:26:08 AM Press Return Key
+9/5/2018 11:26:11 AM Click (element 'Search' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 11:26:16 AM Input Text "BREEXBES4N" (element 'Supplier Code' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 11:26:16 AM Click (element 'Item Details Table Row 1 (Select Row)' on page 'ConvertPRToOrderItemRow')
+9/5/2018 11:26:16 AM Click (element 'Create Order Doc' on page 'ConvertPurchaseRequestToOrder')
+9/5/2018 11:26:17 AM Click (element 'Create Order Popup Close' on page 'ConvertPurchaseRequestToOrder')

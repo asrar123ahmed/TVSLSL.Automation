@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestRunConfig>
+  <Environments>
+    <SelectedEnvironment>Test</SelectedEnvironment>
+    <AvailableEnvironments>
+      <Environment name="Live" url="http://www.tvslogistics.com/RVW/" />
+      <Environment name="Test" url="http://testing.tvslsl.in/RVW/extui/vwrt/LaunchPanel.htm" />
+    </AvailableEnvironments>
+  </Environments>
+  <SelectedBrowser>CHROME</SelectedBrowser>
+  <SelectedPlatform>Desktop</SelectedPlatform>
+</TestRunConfig>

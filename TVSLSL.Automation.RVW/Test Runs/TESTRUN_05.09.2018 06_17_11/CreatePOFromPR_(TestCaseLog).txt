@@ -1,0 +1,14 @@
+9/5/2018 6:17:11 AM TEST CASE STARTED: CreatePOFromPR
+9/5/2018 6:17:14 AM Navigating to URL: http://testing.tvslsl.in/RVW/extui/vwrt/LaunchPanel.htm
+9/5/2018 6:17:19 AM Input Text "tvsuser" (element 'User ID' on page 'Login')
+9/5/2018 6:17:19 AM Input Text "*****************" (element 'Password' on page 'Login')
+9/5/2018 6:17:19 AM Click (element 'Sign In' on page 'Login')
+9/5/2018 6:17:23 AM Input Text (Key-by-Key) "View Purchase Request" (element 'Header Search' on page 'SelfServiceHome')
+9/5/2018 6:17:40 AM Click (element 'First Search Suggestion Option' on page 'SelfServiceHome')
+9/5/2018 6:17:45 AM Input Text "06/08/2018" (element 'PR Date From' on page 'ViewPurchaseRequest')
+9/5/2018 6:17:46 AM Input Text "06/09/2018" (element 'PR Date To' on page 'ViewPurchaseRequest')
+9/5/2018 6:17:46 AM Click (element 'Search' on page 'ViewPurchaseRequest')
+9/5/2018 6:17:46 AM Click (element 'Go Back' on page 'ViewPurchaseRequest')
+9/5/2018 6:17:52 AM Input Text (Key-by-Key) "Convert Purchase Request To Order" (element 'Header Search' on page 'SelfServiceHome')
+9/5/2018 6:18:12 AM EXCEPTION MESSAGE: element not visible   (Session info: chrome=68.0.3440.106)   (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64)
+9/5/2018 6:18:12 AM STACK TRACE:    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)    at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)    at OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)    at OpenQA.Selenium.Remote.RemoteWebElement.SendKeys(String text)    at TVSLSL.Automation.Common.Applications.Pages.WebElements.InputBox.InputTextKeyByKey(String text, Boolean pressReturn) in C:\Users\asrar.ahmed\source\repos\TVSLSL.Automation\TVSLSL.Automation.Core\Applications\Pages\WebElements\InputBox.cs:line 138
