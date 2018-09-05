@@ -120,6 +120,12 @@
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderDoc.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderPopupClose.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
+
+            RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
+            WaitSeconds(3);
+            RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
+            WaitSeconds(5);
+
         }
     }
 }
