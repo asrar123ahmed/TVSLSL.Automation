@@ -25,6 +25,8 @@
 
         public static SelfServiceHome SelfServiceHome { get; private set; }
 
+        public static ViewPurchaseOrder ViewPurchaseOrder { get; private set; }
+
         public static ViewPurchaseRequest ViewPurchaseRequest { get; private set; }
 
         private static void BuildPages()
@@ -37,6 +39,7 @@
             ManageRequest = new ManageRequest();
             PRAdditionalDetails = new PRAdditionalDetails();
             SelfServiceHome = new SelfServiceHome();
+            ViewPurchaseOrder = new ViewPurchaseOrder();
             ViewPurchaseRequest = new ViewPurchaseRequest();
         }
     }
