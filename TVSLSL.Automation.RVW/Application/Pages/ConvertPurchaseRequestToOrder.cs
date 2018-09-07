@@ -25,7 +25,9 @@
 
         public InputBox PRNumberTo { get; private set; }
 
-        public Button Search { get; private set; }  
+        public Button Search { get; private set; }
+        
+        public Label SuccessfulOrderCreatePopupText { get; private set; }
         
         public InputBox SupplierCode { get; private set; }
 
@@ -44,6 +46,7 @@
             PRNumberFrom = new InputBox("PR Number From", By.Id("txtprnofrom"), name, iframe);
             PRNumberTo = new InputBox("PR Number To", By.XPath("//input[@id='txttoprno']"), name, iframe);
             Search = new Button("Search", By.Id("ext-gen57"), name, iframe);
+            SuccessfulOrderCreatePopupText = new Label("Successful Order Create Popup Text", By.Id("msgRoot"), name);
             SupplierCode = new InputBox("Supplier Code", By.Id("txtsuppliercode"), name, iframe);
         }
     }
