@@ -75,7 +75,7 @@
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Request");
             WaitSeconds(3);
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
-            RVWWebApp.ViewPurchaseRequest.PRNumberFrom.InputText(pRNumber);s
+            RVWWebApp.ViewPurchaseRequest.PRNumberFrom.InputText(pRNumber);
             RVWWebApp.ViewPurchaseRequest.PRNumberTo.InputText(pRNumber);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
             WaitSeconds(5);
@@ -110,16 +110,15 @@
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
             WaitSeconds(5);
 
-            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberFrom.InputText(pRnumber, true);
-            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberTo.InputText(pRnumber, true);            
+            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberFrom.InputText(pRnumber);
+            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberTo.InputText(pRnumber);            
             RVWWebApp.ConvertPurchaseRequestToOrder.Search.Click();
             WaitSeconds(5);
             string preferredSupplierCode = RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).PreferredSupplierCode.GetElementText();          
             RVWWebApp.ConvertPurchaseRequestToOrder.SupplierCode.InputText(preferredSupplierCode);
             RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).SelectRow.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderDoc.Click();
-            string orderNumberWithExtraText = RVWWebApp.ConvertPurchaseRequestToOrder.SuccessfulOrderCreatePopupText.GetElementText().Remove(0,16);
-            string orderNumber = orderNumberWithExtraText.Remove(14,23); // Need to remove 'Purchase order "PO0000881/1819" created successfully.'
+            string orderNumber = RVWWebApp.ConvertPurchaseRequestToOrder.SuccessfulOrderCreatePopupText.GetElementText().Remove(0, 16).Remove(14,23);           
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderPopupClose.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
 
