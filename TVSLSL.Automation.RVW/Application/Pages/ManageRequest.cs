@@ -8,6 +8,7 @@
     public class ManageRequest : Page
     {
         private string iframe;
+
         public ManageRequest()
         {
             InitialisePage();
@@ -20,7 +21,7 @@
 
         private void InitialisePage()
         {
-            string iframe = "ilboinnerframe";
+            iframe = "ilboinnerframe";
 
             GoBack = new Button("Go Back", By.Id("span_lnkpreferences"), name, iframe);
             ManageRequestQuickLinks = SectionManager.GetManageRequestQuickLinks();
