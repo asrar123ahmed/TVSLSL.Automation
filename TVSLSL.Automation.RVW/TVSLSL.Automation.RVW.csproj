@@ -74,14 +74,15 @@
     <Compile Include="Application\Pages\SelfServiceHome.cs" />
     <Compile Include="Application\RVWWebApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\ApplyLeaveTest.cs" />
+    <Compile Include="Tests\ApplyLeaveTests.cs" />
     <Compile Include="Tests\Common\RVWTests.cs" />
     <Compile Include="Tests\Data\Accounts\Account.cs" />
     <Compile Include="Tests\Data\Accounts\Accounts.cs" />
     <Compile Include="Tests\LoginTests.cs" />
-    <Compile Include="Tests\ManageRequestTest.cs" />
-    <Compile Include="Tests\CreatePurchaseRequestTest.cs" />
-    <Compile Include="Tests\SelfServiceHomeTest.cs" />
+    <Compile Include="Tests\ManageRequestTests.cs" />
+    <Compile Include="Tests\CreatePurchaseRequestTests.cs" />
+    <Compile Include="Tests\ReportTests.cs" />
+    <Compile Include="Tests\SelfServiceHomeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Test Runs\" />
