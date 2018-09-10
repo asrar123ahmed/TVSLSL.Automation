@@ -55,15 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Pages\ApplyLeave.cs" />
+    <Compile Include="Application\Pages\C1MarginReport.cs" />
     <Compile Include="Application\Pages\CreatePurchaseRequest.cs" />
     <Compile Include="Application\Pages\Login.cs" />
     <Compile Include="Application\Pages\ManageRequest.cs" />
+    <Compile Include="Application\Pages\Sections\C1MarginRepot\C1MarginItemRow.cs" />
     <Compile Include="Application\Pages\Sections\ConvertPurchaseRequestToOrder\ConvertPRToOrderItemRow.cs" />
     <Compile Include="Application\Pages\Sections\View Purchase Order\ViewPurchaseOrderItemRow.cs" />
     <Compile Include="Application\Pages\Sections\View Purchase Request\ViewPurchaseSearchResultsItemRow.cs" />
     <Compile Include="Application\Pages\EditPurchaseRequest.cs" />
     <Compile Include="Application\Pages\ConvertPurchaseRequestToOrder.cs" />
-    <Compile Include="Application\Pages\ViewPurchaseOrder.cs" />
+    <Compile Include="ViewPurchaseOrder.cs" />
     <Compile Include="Application\Pages\ViewPurchaseRequest.cs" />
     <Compile Include="Application\Pages\PRAdditionalDetails.cs" />
     <Compile Include="Application\Pages\Sections\CreatePurchaseRequest\ItemRow.cs" />

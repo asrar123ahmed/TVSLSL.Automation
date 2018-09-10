@@ -11,6 +11,8 @@
 
         public static ApplyLeave ApplyLeave { get; private set; }
 
+        public static C1MarginReport C1MarginReport { get; private set; }
+
         public static ConvertPurchaseRequestToOrder ConvertPurchaseRequestToOrder { get; private set; }
 
         public static CreatePurchaseRequest CreatePurchaseRequest { get; private set; }
@@ -32,6 +34,7 @@
         private static void BuildPages()
         {
             ApplyLeave = new ApplyLeave();
+            C1MarginReport = new C1MarginReport();
             ConvertPurchaseRequestToOrder = new ConvertPurchaseRequestToOrder();
             CreatePurchaseRequest = new CreatePurchaseRequest();
             EditPurchaseRequest = new EditPurchaseRequest();
