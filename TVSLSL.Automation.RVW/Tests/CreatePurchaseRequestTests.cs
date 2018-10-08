@@ -9,6 +9,7 @@
     public class CreatePurchaseRequestTests : RVWTests
     {
         [Test]
+        [Category("TestUserGroup")]
 
         public void CreatePR()
         {
@@ -84,6 +85,7 @@
         }
 
         [Test]
+        [Category("TestUserGroup")]
 
         public void CreatePOFromPR()
         {
@@ -129,8 +131,7 @@
             RVWWebApp.ViewPurchaseOrder.FromPONumber.InputText(orderNumber);
             RVWWebApp.ViewPurchaseOrder.ToPONumber.InputText(orderNumber);
 
-            RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.AssertElementTextEquals(orderNumber);     
-
+            RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.AssertElementTextEquals(orderNumber);    
         }
     }
 }

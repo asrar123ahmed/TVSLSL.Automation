@@ -4,6 +4,7 @@
     {        
         private static MyLeave MyLeave;
         private static ManageRequestQuickLinks ManageRequestQuickLinks;
+        private static UserGroupPopUp UserGroupPopUp;
 
         static SectionManager()
         {

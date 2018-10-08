@@ -6,6 +6,7 @@
     using TVSLSL.Automation.Common.Tests;
     using TVSLSL.Automation.Common.Tests.Utilities;
     using TVSLSL.Automation.Common.Web;
+    using TVSLSL.Automation.RVW.Application;
 
     public class RVWTests
     {
@@ -53,6 +54,46 @@
             WebDriverHelper.KillDriver();
         }
 
+        private void TestUserGroupCheck()
+        {
+            string userGroup;
+            string category = (string)TestContext.CurrentContext.Test.Properties.Get("Category");
+            if (category != null
+                && category.Equals("TestUserGroup"))
+            {
+                try
+                {
+                    WebDriverHelper.InitialiseDriver();
+                    WebDriverHelper.LaunchUrl(TestRun.SelectedEnvironment);
+
+                    RVWWebApp.Login.SignIntoAccountWIthTestUser();
+
+                    userGroup = RVWWebApp.SelfServiceHome.UserGroup.GetElementText();
+
+                    if (userGroup != "Asrar")
+                    {
+                        WaitSeconds(3);
+                        RVWWebApp.SelfServiceHome.UserInfoClick.SelectDropDownOptionByText("Setup Defaults");
+                        RVWWebApp.SelfServiceHome.UserGroupPopUp.OUInstanceDesc.InputText("", true);
+                        RVWWebApp.SelfServiceHome.UserGroupPopUp.OUInstanceDesc.Click();
+
+                        RVWWebApp.SelfServiceHome.UserGroupPopUp.SavedRecordPopUpClose.Click();
+                        RVWWebApp.SelfServiceHome.UserGroupPopUp.ChangeDefaultPopUpClose.Click();
+                    }
+
+                }
+
+                catch
+                {
+                    //Nothing To Do
+                }
+
+                finally
+                {
+                    WebDriverHelper.KillDriver();
+                }
+            }
+        }
         public void WaitSeconds(int seconds)
         {
             Thread.Sleep(seconds * 1000);
