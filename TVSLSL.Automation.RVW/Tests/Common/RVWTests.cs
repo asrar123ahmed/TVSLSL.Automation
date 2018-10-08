@@ -70,7 +70,7 @@
 
                     userGroup = RVWWebApp.SelfServiceHome.UserGroup.GetElementText();
 
-                    if (userGroup != "Asrar")
+                    if (userGroup.Equals("Asrar") == false)
                     {
                         WaitSeconds(3);
                         RVWWebApp.SelfServiceHome.UserInfoClick.SelectDropDownOptionByText("Setup Defaults");
