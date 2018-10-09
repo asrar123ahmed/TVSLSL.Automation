@@ -11,10 +11,11 @@
         {
             //Test to verify user able to login successfully
 
-            WaitSeconds(30);
+            WaitSeconds(30); // Page upload
             ERPWebApp.Login.SignIntoAccountWithMyAccount();
             //add assertion here 
-            WaitSeconds(30);
+            ERPWebApp.EnviromentSelection.ITGHDQ.Click();
+            ERPWebApp.GeneralInformation.Menus.Click();
         }
     }
 }
