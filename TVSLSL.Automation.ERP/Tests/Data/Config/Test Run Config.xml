@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestRunConfig>
+  <Environments>
+    <SelectedEnvironment>Test</SelectedEnvironment>
+    <AvailableEnvironments>      
+      <Environment name="Test" url="http://legaappi1.multipart.com:8080/tvs/erp.html" />
+    </AvailableEnvironments>
+  </Environments>
+  <SelectedBrowser>CHROME</SelectedBrowser>
+  <SelectedPlatform>Desktop</SelectedPlatform>
+</TestRunConfig>
