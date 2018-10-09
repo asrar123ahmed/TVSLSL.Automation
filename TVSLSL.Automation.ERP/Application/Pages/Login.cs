@@ -7,6 +7,7 @@
 
     public class Login : Page
     {
+        private string iframe;
         public Login()
         {
             InitialisePage();
@@ -14,7 +15,7 @@
 
         public InputBox Password { get; private set; }
 
-        public Button Submit { get; private set; }
+        public Button SignIn { get; private set; }
 
         public InputBox UserName { get; private set; }
 
@@ -22,7 +23,7 @@
         {
             UserName.InputText(user);
             Password.InputText(password);
-            Submit.Click();
+            SignIn.Click();
         }
 
         public void SignIntoAccount(Account account)
@@ -38,10 +39,11 @@
 
         private void InitialisePage()
         {
-            Password = new InputBox("Password", By.Id("PASSWORD"), name);
-            Submit = new Button("Sign In", By.Id("SUBMIT"), name);
-            UserName = new InputBox("User Name", By.Id("USERNAME"), name);
-
+            iframe = "WEBUI";
+            
+            Password = new InputBox("Password", By.Id("PASSWORD"), name, iframe);
+            SignIn = new Button("Sign In", By.Id("SUBMIT"), name, iframe);
+            UserName = new InputBox("User Name", By.Id("USERNAME"), name, iframe);
         }
     }
 }

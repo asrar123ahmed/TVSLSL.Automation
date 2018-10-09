@@ -5,8 +5,7 @@
     using System.Xml;
     using TVSLSL.Automation.Common.Tests;
     using TVSLSL.Automation.Common.Tests.Utilities;
-    using TVSLSL.Automation.Common.Web;
-    using TVSLSL.Automation.ERP.Application;
+    using TVSLSL.Automation.Common.Web;    
         
     public class ERPTests
     {
@@ -41,6 +40,11 @@
             TestLogger.LogTestCaseEnd();
             RunTimeTestData.ClearTestData();
             WebDriverHelper.KillDriver();
+        }
+
+        public void WaitSeconds(int seconds)
+        {
+            Thread.Sleep(seconds * 1000);
         }
     }
 }

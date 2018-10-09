@@ -11,6 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSLSL.Automation.RVW", "TV
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSLSL.Automation.ERP", "TVSLSL.Automation.ERP\TVSLSL.Automation.ERP.csproj", "{9231778B-38C3-44CF-8A12-51713B75F2FB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{867C4219-21A9-4411-9D4D-9F9B729AE533} = {867C4219-21A9-4411-9D4D-9F9B729AE533}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
