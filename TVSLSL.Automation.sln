@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSLSL.Automation.RVW", "TV
 		{867C4219-21A9-4411-9D4D-9F9B729AE533} = {867C4219-21A9-4411-9D4D-9F9B729AE533}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSLSL.Automation.ERP", "TVSLSL.Automation.ERP\TVSLSL.Automation.ERP.csproj", "{9231778B-38C3-44CF-8A12-51713B75F2FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{28F69C16-988B-4102-A8CF-065645D4D178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F69C16-988B-4102-A8CF-065645D4D178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F69C16-988B-4102-A8CF-065645D4D178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9231778B-38C3-44CF-8A12-51713B75F2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9231778B-38C3-44CF-8A12-51713B75F2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9231778B-38C3-44CF-8A12-51713B75F2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9231778B-38C3-44CF-8A12-51713B75F2FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
