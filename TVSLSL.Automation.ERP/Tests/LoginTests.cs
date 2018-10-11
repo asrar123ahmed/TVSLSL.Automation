@@ -16,6 +16,8 @@
             //add assertion here 
             ERPWebApp.EnviromentSelection.ITGHDQ.Click();
             ERPWebApp.GeneralInformation.Menus.Click();
+            ERPWebApp.ListOfMenusAuthorizedForUser.SearchBox.InputText("AFT01", true);
+            ERPWebApp.ListOfMenusAuthorizedForUser.SearchBox.InputText("AFT101D1", true);
         }
     }
 }

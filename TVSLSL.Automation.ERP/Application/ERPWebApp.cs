@@ -13,6 +13,8 @@
 
         public static GeneralInformation GeneralInformation { get; private set; }
 
+        public static ListOfMenusAuthorizedForUser ListOfMenusAuthorizedForUser { get; private set; }
+
         public static Login Login { get; private set; }
         
 
@@ -20,6 +22,7 @@
         {
             EnviromentSelection = new EnviromentSelection();
             GeneralInformation = new GeneralInformation();
+            ListOfMenusAuthorizedForUser = new ListOfMenusAuthorizedForUser();
             Login = new Login();
         }
     }

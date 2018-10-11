@@ -34,7 +34,7 @@
         public void SignIntoAccountWithMyAccount()
         {
             SignIntoAccount(Accounts.GetAccount().UserName, Accounts.GetAccount().Password);
-            WaitSeconds(4); //Wait for home page to load
+            //WaitSeconds(4); //Wait for home page to load
         }
 
         private void InitialisePage()
