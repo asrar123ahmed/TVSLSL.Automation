@@ -15,6 +15,8 @@
 
         public InputBox PRNumber { get; private set; }
 
+        public Label RowCount { get; private set; }
+
         private void InitialiseSection(int rowIndex)
         {
             iframe = "ilboinnerframe";
@@ -26,6 +28,7 @@
                                 BuildDynamicLocator("//*[@id='mldatatablename_cell_c{0}_r{1}']/div", 1, rowIndex),
                                 name, iframe);
 
+            RowCount = new Label("Row Count", By.XPath("//div[@id='ext-gen474']/div[@class='x-grid3-body']/div[contains(@class,'x-grid3-row ')]"), name, iframe);                                
         }
     }
 }

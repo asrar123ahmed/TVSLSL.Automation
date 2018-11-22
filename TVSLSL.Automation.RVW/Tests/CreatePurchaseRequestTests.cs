@@ -104,6 +104,7 @@
             RVWWebApp.ViewPurchaseRequest.PRDateTo.InputText(dateTo, true);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
             WaitSeconds(5);
+            int number = RVWWebApp.ViewPurchaseRequest.GetItemRow
             string pRnumber = RVWWebApp.ViewPurchaseRequest.GetItemRow(1).PRNumber.GetElementText();
             RVWWebApp.ViewPurchaseRequest.GoBack.Click();
 
