@@ -8,8 +8,7 @@
         static Accounts()
         {
             Account = new Account("smita@20186", "049985");
-            TestAccount = new Account("tvs@333", "tvsuser");
-
+            TestAccount = new Account("tvs@987", "tvsuser");
         }
 
         public static Account GetAccount()

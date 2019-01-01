@@ -24,25 +24,24 @@
             WaitSeconds(5);
 
             RVWWebApp.CreatePurchaseRequest.Type.ClearText();
-            RVWWebApp.CreatePurchaseRequest.Type.InputText("CAPITAL", true);
-            RVWWebApp.CreatePurchaseRequest.RequesterId.InputText("052335");
-            RVWWebApp.CreatePurchaseRequest.RequesterName.InputText("Nived");
-            RVWWebApp.CreatePurchaseRequest.ProposalNumber.InputText("3PLAPN00001/1819");
+            RVWWebApp.CreatePurchaseRequest.Type.InputText("GENERAL", true);
+            RVWWebApp.CreatePurchaseRequest.RequesterId.InputText("034743", true);            
+            RVWWebApp.CreatePurchaseRequest.ProposalNumber.InputText("");
 
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.Click();
-            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates("GENCOOAIRELE007");
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates("SERCHA1MPCOM259");
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).RequiredQuantity.Click();
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).RequiredQuantity.InputTextByCoordinates("1");
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).Cost.Click();
-            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).Cost.InputTextByCoordinates("1000");
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).Cost.InputTextByCoordinates("125");
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).NeedDate.Click();
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).NeedDate.InputTextByCoordinates(needDate);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).PreferredSupplierCode.Click();
-            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).PreferredSupplierCode.InputTextByCoordinates("GATEXRAI28");
-            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).PreferredSupplierCode.InputTextByCoordinates("SIFEXTARK1");
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);            
 
             RVWWebApp.CreatePurchaseRequest.CreatePurchaseReq();
             RVWWebApp.CreatePurchaseRequest.PRCreatePopupClose.Click();
@@ -50,11 +49,11 @@
             WaitSeconds(5);
 
             string pRNumber = RVWWebApp.PRAdditionalDetails.PRNumber.GetElementText();
-            RVWWebApp.PRAdditionalDetails.LineOfBusiness.InputText("AFTER MARKET WAREHOUSE", true);
+            RVWWebApp.PRAdditionalDetails.LineOfBusiness.InputText("Intra Company", true);
             WaitSeconds(3);
-            RVWWebApp.PRAdditionalDetails.ProjectName.InputText("BANGALORE WAREHOUSE", true);
+            RVWWebApp.PRAdditionalDetails.ProjectName.InputText("3PL General Expenses", true);
             WaitSeconds(3);
-            RVWWebApp.PRAdditionalDetails.ProjectLocation.InputText("BANGADTVSWHE2", true);
+            RVWWebApp.PRAdditionalDetails.ProjectLocation.InputText("BANKRPTVSWHA1", true);
             WaitSeconds(3);
             RVWWebApp.PRAdditionalDetails.GetItemRow(1).MassCheck.Check();
             RVWWebApp.PRAdditionalDetails.GetItemRow(1).BillToCustomer.Click();
@@ -91,8 +90,8 @@
         {
             //Test to verify that user can create purchase order from the purchase request
 
-            string dateFrom = TestHelper.GetTodaysDate("dd/MM/yyyy", -30);
-            string dateTo = TestHelper.GetTodaysDate("dd/MM/yyyy", 1);
+            string dateFrom = TestHelper.GetTodaysDate("dd/MM/yyyy");
+            string dateTo = TestHelper.GetTodaysDate("dd/MM/yyyy");
 
             RVWWebApp.Login.SignIntoAccountWIthTestUser();
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Request");
@@ -104,8 +103,9 @@
             RVWWebApp.ViewPurchaseRequest.PRDateTo.InputText(dateTo, true);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
             WaitSeconds(5);
-            int number = RVWWebApp.ViewPurchaseRequest.GetItemRow
-            string pRnumber = RVWWebApp.ViewPurchaseRequest.GetItemRow(1).PRNumber.GetElementText();
+
+            int totalRow = RVWWebApp.ViewPurchaseRequest.GetTotalRowCount();
+            string pRnumber = RVWWebApp.ViewPurchaseRequest.GetItemRow(totalRow).PRNumber.GetElementText();
             RVWWebApp.ViewPurchaseRequest.GoBack.Click();
 
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("Convert Purchase Request To Order");

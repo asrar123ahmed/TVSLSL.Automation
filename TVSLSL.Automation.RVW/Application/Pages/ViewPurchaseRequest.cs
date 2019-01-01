@@ -29,13 +29,20 @@
 
         public Button Search { get; private set; }
 
+        public Label RowCount { get; private set; }
+
         public Button ViewPurchaseRequestBtn { get; private set; }        
 
         public ViewPurchaseSearchResultsItemRow GetItemRow(int index)
         {
             return new ViewPurchaseSearchResultsItemRow(index);
         }
-        
+
+        public int GetTotalRowCount()
+        {
+            return RowCount.GetElementCount();
+        }
+
         private void InitialisePage()
         {
             iframe = "ilboinnerframe";
@@ -47,6 +54,7 @@
             PRNumberFrom = new InputBox("PR Number From", By.Id("txtprnofrom"), name, iframe);
             PRNumberTo = new InputBox("PR Number To", By.Id("txtprnoto"), name, iframe);
             Search = new Button("Search", By.Id("ext-gen49"), name, iframe);
+            RowCount = new Label("Row Count", By.XPath("//div[@id='ext-gen479']/div[contains(@class,'x-grid3-row ')]"), name, iframe);
             ViewPurchaseRequestBtn = new Button("View Purchase Request", By.Id("span_prvwentpgmainpglnk"), name, iframe);            
         }
     }

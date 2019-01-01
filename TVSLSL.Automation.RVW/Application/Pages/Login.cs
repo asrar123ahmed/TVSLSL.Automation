@@ -20,10 +20,14 @@
 
         public InputBox UserID { get; private set; }
 
+        public DropDown UserType { get; private set; }
+
         public void SignIntoAccount(string user, string password)
         {
             UserID.InputText(user);
-            Password.InputText(password);            
+            Password.InputText(password);
+            UserType.SelectDropDownOptionByText("Default");
+            WaitSeconds(3);
             SignIn.Click();
         }
                 
@@ -51,6 +55,7 @@
             Password = new InputBox("Password", By.Id("ide_password"), name, iframe);          
             SignIn = new Button("Sign In", By.XPath("//div[@onclick='login()']"), name, iframe);
             UserID = new InputBox("User ID", By.Id("ide_username"), name, iframe);
+            UserType = new DropDown("User Type", By.Id("ldapauthBox"), name, iframe);
         }
     }
 }
