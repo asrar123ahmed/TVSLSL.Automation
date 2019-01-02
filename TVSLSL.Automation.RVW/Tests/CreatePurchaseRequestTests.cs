@@ -10,6 +10,7 @@
     {
         [Test]
         [Category("TestUserGroup")]
+        [Order(1)]
 
         public void CreatePR()
         {
@@ -33,15 +34,21 @@
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).RequiredQuantity.Click();
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).RequiredQuantity.InputTextByCoordinates("1");
-            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).RequiredQuantity.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).Cost.Click();
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).Cost.InputTextByCoordinates("125");
-            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).Cost.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).NeedDate.Click();
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).NeedDate.InputTextByCoordinates(needDate);
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).PreferredSupplierCode.Click();
             RVWWebApp.CreatePurchaseRequest.GetItemRow(1).PreferredSupplierCode.InputTextByCoordinates("SIFEXTARK1");
-            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ItemCode.InputTextByCoordinates(Keys.Enter);            
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).PreferredSupplierCode.InputTextByCoordinates(Keys.Enter);
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ACUsage.Click();
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ACUsage.InputTextByCoordinates("ISPCHARG");
+            RVWWebApp.CreatePurchaseRequest.GetItemRow(1).ACUsage.InputTextByCoordinates(Keys.Enter);
+
+            RVWWebApp.CreatePurchaseRequest.Default.Click();
+            WaitSeconds(3);
 
             RVWWebApp.CreatePurchaseRequest.CreatePurchaseReq();
             RVWWebApp.CreatePurchaseRequest.PRCreatePopupClose.Click();
@@ -53,7 +60,7 @@
             WaitSeconds(3);
             RVWWebApp.PRAdditionalDetails.ProjectName.InputText("3PL General Expenses", true);
             WaitSeconds(3);
-            RVWWebApp.PRAdditionalDetails.ProjectLocation.InputText("BANKRPTVSWHA1", true);
+            RVWWebApp.PRAdditionalDetails.ProjectLocation.InputText("MUMBHITVSWHA1", true);
             WaitSeconds(3);
             RVWWebApp.PRAdditionalDetails.GetItemRow(1).MassCheck.Check();
             RVWWebApp.PRAdditionalDetails.GetItemRow(1).BillToCustomer.Click();
@@ -75,16 +82,17 @@
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Request");
             WaitSeconds(3);
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
-            RVWWebApp.ViewPurchaseRequest.PRNumberFrom.InputText(pRNumber);
-            RVWWebApp.ViewPurchaseRequest.PRNumberTo.InputText(pRNumber);
+            RVWWebApp.ViewPurchaseRequest.PRNumberFrom.InputTextKeyByKey(pRNumber);
+            RVWWebApp.ViewPurchaseRequest.PRNumberTo.InputTextKeyByKey(pRNumber);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
-            WaitSeconds(5);
+            WaitSeconds(20);
 
             RVWWebApp.ViewPurchaseRequest.GetItemRow(1).PRNumber.AssertElementTextEquals(pRNumber);
         }
 
         [Test]
         [Category("TestUserGroup")]
+        [Order(2)]
 
         public void CreatePOFromPR()
         {
@@ -102,7 +110,7 @@
             RVWWebApp.ViewPurchaseRequest.PRDateFrom.InputText(dateFrom, true);
             RVWWebApp.ViewPurchaseRequest.PRDateTo.InputText(dateTo, true);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
-            WaitSeconds(5);
+            WaitSeconds(40);
 
             int totalRow = RVWWebApp.ViewPurchaseRequest.GetTotalRowCount();
             string pRnumber = RVWWebApp.ViewPurchaseRequest.GetItemRow(totalRow).PRNumber.GetElementText();
@@ -116,21 +124,27 @@
             RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberFrom.InputText(pRnumber);
             RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberTo.InputText(pRnumber);            
             RVWWebApp.ConvertPurchaseRequestToOrder.Search.Click();
-            WaitSeconds(5);
+            WaitSeconds(40);
             string preferredSupplierCode = RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).PreferredSupplierCode.GetElementText();          
             RVWWebApp.ConvertPurchaseRequestToOrder.SupplierCode.InputText(preferredSupplierCode);
             RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).SelectRow.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderDoc.Click();
-            string orderNumber = RVWWebApp.ConvertPurchaseRequestToOrder.SuccessfulOrderCreatePopupText.GetElementText().Remove(0, 16).Remove(14,23);           
+            WaitSeconds(5);
+                      
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderPopupClose.Click();
+            RVWWebApp.ConvertPurchaseRequestToOrder.EditPurchaseRequest.Click();
+            string orderNumber = RVWWebApp.EditPurchaseOrder.PONumber.GetElementText();
+            RVWWebApp.EditPurchaseOrder.GoBack.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
 
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
             WaitSeconds(3);
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
             WaitSeconds(5);
-            RVWWebApp.ViewPurchaseOrder.FromPONumber.InputText(orderNumber);
-            RVWWebApp.ViewPurchaseOrder.ToPONumber.InputText(orderNumber);
+            RVWWebApp.ViewPurchaseOrder.FromPONumber.InputTextKeyByKey(orderNumber);
+            RVWWebApp.ViewPurchaseOrder.ToPONumber.InputTextKeyByKey(orderNumber);
+            RVWWebApp.ViewPurchaseOrder.Search.Click();
+            WaitSeconds(3);
 
             RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.AssertElementTextEquals(orderNumber);    
         }

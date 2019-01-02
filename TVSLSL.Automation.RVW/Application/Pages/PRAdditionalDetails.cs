@@ -51,7 +51,7 @@
             ProjectLocation = new InputBox("Project Location", By.Id("txtproject_location"), name, iframe);
             ProjectName = new InputBox("Project Name", By.Id("txtproject_name"), name, iframe);
             Save = new Button("Save", By.XPath("//*[@tabindex='8']"), name, iframe);
-            SavePopupClose = new Button("Save Popup Close", By.Id("ext-gen1277"), name);
+            SavePopupClose = new Button("Save Popup Close", By.XPath("//em/button[contains(.,'Close')]"), name);
         }
     }
 }

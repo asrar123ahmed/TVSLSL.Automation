@@ -17,9 +17,11 @@
 
         public static CreatePurchaseRequest CreatePurchaseRequest { get; private set; }
 
-        public static Login Login { get; private set; }
+        public static EditPurchaseOrder EditPurchaseOrder { get; private set; }        
 
         public static EditPurchaseRequest EditPurchaseRequest { get; private set; }
+
+        public static Login Login { get; private set; }
 
         public static ManageRequest ManageRequest { get; private set; }
 
@@ -37,6 +39,7 @@
             C1MarginReport = new C1MarginReport();
             ConvertPurchaseRequestToOrder = new ConvertPurchaseRequestToOrder();
             CreatePurchaseRequest = new CreatePurchaseRequest();
+            EditPurchaseOrder = new EditPurchaseOrder();
             EditPurchaseRequest = new EditPurchaseRequest();
             Login = new Login();
             ManageRequest = new ManageRequest();

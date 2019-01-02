@@ -21,6 +21,8 @@
 
         public Button CreateOrderPopupClose { get; private set; }
 
+        public Link EditPurchaseRequest { get; private set; }
+
         public InputBox PRNumberFrom { get; private set; }
 
         public InputBox PRNumberTo { get; private set; }
@@ -42,11 +44,12 @@
 
             ConvertPRGoBackBtn = new Button("Go Back button", By.Id("ext-gen848"), name);
             CreateOrderDoc = new Button("Create Order Doc", By.XPath("//button[@id='ext-gen64'][@tabindex='27']"), name, iframe);
-            CreateOrderPopupClose = new Button("Create Order Popup Close", By.Id("ext-gen1162"), name);
+            CreateOrderPopupClose = new Button("Create Order Popup Close", By.XPath("//em/button[contains(.,'Close')]"), name);
+            EditPurchaseRequest = new Link("Edit Purchase Request", By.Id("span_proconvord"), name, iframe);
             PRNumberFrom = new InputBox("PR Number From", By.Id("txtprnofrom"), name, iframe);
             PRNumberTo = new InputBox("PR Number To", By.XPath("//input[@id='txttoprno']"), name, iframe);
             Search = new Button("Search", By.Id("ext-gen57"), name, iframe);
-            SuccessfulOrderCreatePopupText = new Label("Successful Order Create Popup Text", By.Id("msgRoot"), name);
+            SuccessfulOrderCreatePopupText = new Label("Successful Order Create Popup Text", By.XPath("//td[contains(@id,'msgRoot') and contains(.,'Purchase order')]"), name);
             SupplierCode = new InputBox("Supplier Code", By.Id("txtsuppliercode"), name, iframe);
         }
     }

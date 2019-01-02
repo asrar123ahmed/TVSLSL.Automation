@@ -40,7 +40,7 @@
 
         public int GetTotalRowCount()
         {
-            return RowCount.GetElementCount();
+            return RowCount.GetElementCount();            
         }
 
         private void InitialisePage()

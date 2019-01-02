@@ -13,6 +13,8 @@
             InitialiseSection(rowIndex);
         }
 
+        public InputBox ACUsage { get; private set; }
+
         public InputBox Cost { get; private set; }
 
         public InputBox ItemCode { get; private set; }
@@ -31,8 +33,11 @@
         {
             iframe = "ilboinnerframe";
 
-            string locatorTextPrefix = "Item Details Table Row {0} ({1})";                     
+            string locatorTextPrefix = "Item Details Table Row {0} ({1})";
 
+            ACUsage = new InputBox(string.Format(locatorTextPrefix, rowIndex, "AC Usage"),
+                                BuildDynamicLocator("//*[@id='mltprcrtmain_cell_c{0}_r{1}']", 32, rowIndex),
+                                name, iframe);
 
             Cost = new InputBox(string.Format(locatorTextPrefix, rowIndex, "Cost"),
                                 BuildDynamicLocator("//*[@id='mltprcrtmain_cell_c{0}_r{1}']", 6, rowIndex),

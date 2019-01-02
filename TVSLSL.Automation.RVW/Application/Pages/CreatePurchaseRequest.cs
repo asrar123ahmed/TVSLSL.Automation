@@ -137,7 +137,7 @@
             NumberingSeries = new InputBox("Numbering Series", By.XPath("//img[@id='ext-gen246']"), name, iframe);
             OrderAt = new InputBox("Order At", By.Id("ext-gen264"), name, iframe);
             PRAdditionalDetails = new Link("PR Additional Details", By.Id("span__lnkprcrtmainpgadddetails"), name, iframe);
-            PRCreatePopupClose = new Button("PR Create Popup Close", By.Id("ext-gen1140"), name);
+            PRCreatePopupClose = new Button("PR Create Popup Close", By.Id("ext-gen1159"), name);
             PRCreatePopupMessage = new Label("PR Create Popup Message", By.Id("msgRoot"), name);
             PRDate = new InputBox("PR Date", By.XPath("//input[@id='txtprdate']"), name, iframe);
             PrintPR = new Button("Print PR", By.XPath("//button[@id='ext-gen113' and @class='x-btn-text x-form-buttontext']"), name, iframe);
