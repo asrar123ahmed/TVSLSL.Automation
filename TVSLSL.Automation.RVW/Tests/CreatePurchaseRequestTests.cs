@@ -111,7 +111,7 @@
             RVWWebApp.ViewPurchaseRequest.PRDateFrom.InputText(dateFrom, true);
             RVWWebApp.ViewPurchaseRequest.PRDateTo.InputText(dateTo, true);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
-            WaitSeconds(40);
+            WaitSeconds(100);
 
             int totalRow = RVWWebApp.ViewPurchaseRequest.GetTotalRowCount();
             string pRnumber = RVWWebApp.ViewPurchaseRequest.GetItemRow(totalRow).PRNumber.GetElementText();
@@ -125,7 +125,7 @@
             RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberFrom.InputText(pRnumber);
             RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberTo.InputText(pRnumber);            
             RVWWebApp.ConvertPurchaseRequestToOrder.Search.Click();
-            WaitSeconds(40);
+            WaitSeconds(100);
             string preferredSupplierCode = RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).PreferredSupplierCode.GetElementText();          
             RVWWebApp.ConvertPurchaseRequestToOrder.SupplierCode.InputText(preferredSupplierCode);
             RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).SelectRow.Click();
