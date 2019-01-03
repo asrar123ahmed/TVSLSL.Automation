@@ -6,11 +6,11 @@
     using TVSLSL.Automation.Common.Web;
     using TVSLSL.Automation.RVW.Application.Pages.Sections;
 
-    public class SpecifyPO_PRCoverage : Page
+    public class SpecifyPOPRCoverage : Page
     {
         private string iframe;        
 
-        public SpecifyPO_PRCoverage()
+        public SpecifyPOPRCoverage()
         {
             InitialisePage();
         }        
@@ -27,7 +27,7 @@
             
             GoBack = new Button("Go back", By.Id("ext-gen848"), name);            
             PopupClose = new Button("Popup Close", By.XPath("//button[text()='Close']"), name);
-            CoverPR = new Button("Cover PR", By.XPath("ext-gen57"), name, iframe);            
+            CoverPR = new Button("Cover PR", By.Id("ext-gen57"), name, iframe);            
         }
     }
 }

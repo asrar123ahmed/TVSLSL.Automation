@@ -58,6 +58,7 @@
     <Compile Include="Application\Pages\ApplyLeave.cs" />
     <Compile Include="Application\Pages\C1MarginReport.cs" />
     <Compile Include="Application\Pages\CreatePurchaseRequest.cs" />
+    <Compile Include="Application\Pages\Sections\Edit Purchase Order\EditPurchaseOrderItemRow.cs" />
     <Compile Include="Application\Pages\SpecifyPOPRCoverage.cs" />
     <Compile Include="Application\Pages\SpecifyScheduleAndDistribution.cs" />
     <Compile Include="Application\Pages\TaxCalculationSummary.cs" />

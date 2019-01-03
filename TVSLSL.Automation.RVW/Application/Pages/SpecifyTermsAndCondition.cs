@@ -30,7 +30,7 @@
             GoBack = new Button("Go back", By.Id("ext-gen848"), name);
             InsuranceAmount = new InputBox("Insurance Amount", By.Id("txtinsuranceamount"), name, iframe);
             PopupClose = new Button("Popup Close", By.XPath("//button[text()='Close']"), name);
-            SpecifyTermsAndConditionBtn = new Button("Specify Terms And Condition Btn", By.XPath("ext-gen79"), name, iframe);            
+            SpecifyTermsAndConditionBtn = new Button("Specify Terms And Condition Btn", By.Id("ext-gen79"), name, iframe);            
         }
     }
 }

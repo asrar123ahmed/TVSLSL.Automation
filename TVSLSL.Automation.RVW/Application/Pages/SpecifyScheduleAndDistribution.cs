@@ -27,7 +27,7 @@
             
             GoBack = new Button("Go back", By.Id("ext-gen848"), name);            
             PopupClose = new Button("Popup Close", By.XPath("//button[text()='Close']"), name);
-            SpecifySchedule = new Button("Specify Schedule", By.XPath("ext-gen64"), name, iframe);            
+            SpecifySchedule = new Button("Specify Schedule", By.Id("ext-gen64"), name, iframe);            
         }
     }
 }

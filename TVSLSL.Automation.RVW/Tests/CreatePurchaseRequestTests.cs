@@ -56,11 +56,12 @@
             WaitSeconds(5);
 
             string pRNumber = RVWWebApp.PRAdditionalDetails.PRNumber.GetElementText();
-            RVWWebApp.PRAdditionalDetails.LineOfBusiness.InputText("Intra Company", true);
+            WaitSeconds(5);
+            RVWWebApp.PRAdditionalDetails.LineOfBusiness.InputTextKeyByKey("Intra Company", true);
             WaitSeconds(3);
-            RVWWebApp.PRAdditionalDetails.ProjectName.InputText("3PL General Expenses", true);
+            RVWWebApp.PRAdditionalDetails.ProjectName.InputTextKeyByKey("3PL General Expenses", true);
             WaitSeconds(3);
-            RVWWebApp.PRAdditionalDetails.ProjectLocation.InputText("MUMBHITVSWHA1", true);
+            RVWWebApp.PRAdditionalDetails.ProjectLocation.InputTextKeyByKey("MUMBHITVSWHA1", true);
             WaitSeconds(3);
             RVWWebApp.PRAdditionalDetails.GetItemRow(1).MassCheck.Check();
             RVWWebApp.PRAdditionalDetails.GetItemRow(1).BillToCustomer.Click();
@@ -74,7 +75,7 @@
 
             RVWWebApp.CreatePurchaseRequest.EditPurchaseRequest.Click();
             RVWWebApp.EditPurchaseRequest.EditAndApprovePR.Click();
-            WaitSeconds(3);
+            WaitSeconds(5);
             RVWWebApp.EditPurchaseRequest.PopupClose.Click();
             RVWWebApp.EditPurchaseRequest.GoBack.Click();
             RVWWebApp.CreatePurchaseRequest.GoBackBtn.Click();
@@ -134,6 +135,54 @@
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderPopupClose.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.EditPurchaseRequest.Click();
             string orderNumber = RVWWebApp.EditPurchaseOrder.PONumber.GetElementText();
+
+            //Do Specify Terms And Condition Step
+            RVWWebApp.EditPurchaseOrder.SpecifyTermsAndConditions.Click();
+            WaitSeconds(5);
+            RVWWebApp.SpecifyTermsAndCondition.InsuranceAmount.InputText("0");
+            RVWWebApp.SpecifyTermsAndCondition.SpecifyTermsAndConditionBtn.Click();
+            WaitSeconds(5);
+            RVWWebApp.SpecifyTermsAndCondition.PopupClose.Click();
+            RVWWebApp.SpecifyTermsAndCondition.GoBack.Click();
+
+            //Do Tax calculation Summary Step
+            RVWWebApp.EditPurchaseOrder.TaxCalculationSummary.Click();
+            WaitSeconds(5);
+            RVWWebApp.TaxCalculationSummary.SaveDetails.Click();
+            WaitSeconds(5);
+            RVWWebApp.TaxCalculationSummary.PopupClose.Click();
+            RVWWebApp.TaxCalculationSummary.GoBack.Click();
+
+            //Do Specify Schedule & Distribution Step
+            RVWWebApp.EditPurchaseOrder.SpecifyScheduleAndDistribution.Click();
+            WaitSeconds(5);
+            RVWWebApp.SpecifyScheduleAndDistribution.SpecifySchedule.Click();
+            WaitSeconds(5);
+            RVWWebApp.SpecifyScheduleAndDistribution.PopupClose.Click();
+            RVWWebApp.SpecifyScheduleAndDistribution.GoBack.Click();
+
+            //Do Specify PO - PR coverage Step
+            RVWWebApp.EditPurchaseOrder.SpecifyPOPRCoverage.Click();
+            WaitSeconds(5);
+            RVWWebApp.SpecifyPOPRCoverage.CoverPR.Click();
+            WaitSeconds(5);
+            RVWWebApp.SpecifyPOPRCoverage.PopupClose.Click();
+            RVWWebApp.SpecifyPOPRCoverage.GoBack.Click();
+
+            //Do Refresh Step
+            RVWWebApp.EditPurchaseOrder.Refresh.Click();
+
+            //Do Edit & Approve PO Step
+            RVWWebApp.EditPurchaseOrder.AnalysisCode.InputText("APR18");
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.Click();
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.ClearText();
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates("ISPCHARG");
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates(Keys.Enter);
+            RVWWebApp.EditPurchaseOrder.Default.Click();
+            RVWWebApp.EditPurchaseOrder.EditAndApprovePO.Click();
+            WaitSeconds(5);
+            RVWWebApp.EditPurchaseOrder.PopupClose.Click();
+
             RVWWebApp.EditPurchaseOrder.GoBack.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
 

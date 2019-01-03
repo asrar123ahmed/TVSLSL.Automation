@@ -29,6 +29,14 @@
 
         public static SelfServiceHome SelfServiceHome { get; private set; }
 
+        public static SpecifyPOPRCoverage SpecifyPOPRCoverage { get; private set; }
+
+        public static SpecifyTermsAndCondition SpecifyTermsAndCondition { get; private set; }
+
+        public static SpecifyScheduleAndDistribution SpecifyScheduleAndDistribution { get; private set; }
+
+        public static TaxCalculationSummary TaxCalculationSummary { get; private set; }
+
         public static ViewPurchaseOrder ViewPurchaseOrder { get; private set; }
 
         public static ViewPurchaseRequest ViewPurchaseRequest { get; private set; }
@@ -45,6 +53,10 @@
             ManageRequest = new ManageRequest();
             PRAdditionalDetails = new PRAdditionalDetails();
             SelfServiceHome = new SelfServiceHome();
+            SpecifyPOPRCoverage = new SpecifyPOPRCoverage();
+            SpecifyTermsAndCondition = new SpecifyTermsAndCondition();
+            SpecifyScheduleAndDistribution = new SpecifyScheduleAndDistribution();
+            TaxCalculationSummary = new TaxCalculationSummary();
             ViewPurchaseOrder = new ViewPurchaseOrder();
             ViewPurchaseRequest = new ViewPurchaseRequest();
         }
