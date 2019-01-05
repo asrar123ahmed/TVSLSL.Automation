@@ -27,6 +27,8 @@
 
         public static PRAdditionalDetails PRAdditionalDetails { get; private set; }
 
+        public static SelectPurchaseOrder SelectPurchaseOrder { get; private set; }
+
         public static SelfServiceHome SelfServiceHome { get; private set; }
 
         public static SpecifyPOPRCoverage SpecifyPOPRCoverage { get; private set; }
@@ -52,6 +54,7 @@
             Login = new Login();
             ManageRequest = new ManageRequest();
             PRAdditionalDetails = new PRAdditionalDetails();
+            SelectPurchaseOrder = new SelectPurchaseOrder();
             SelfServiceHome = new SelfServiceHome();
             SpecifyPOPRCoverage = new SpecifyPOPRCoverage();
             SpecifyTermsAndCondition = new SpecifyTermsAndCondition();

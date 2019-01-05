@@ -75,7 +75,7 @@
 
             RVWWebApp.CreatePurchaseRequest.EditPurchaseRequest.Click();
             RVWWebApp.EditPurchaseRequest.EditAndApprovePR.Click();
-            WaitSeconds(5);
+            WaitSeconds(100);
             RVWWebApp.EditPurchaseRequest.PopupClose.Click();
             RVWWebApp.EditPurchaseRequest.GoBack.Click();
             RVWWebApp.CreatePurchaseRequest.GoBackBtn.Click();
@@ -130,18 +130,66 @@
             RVWWebApp.ConvertPurchaseRequestToOrder.SupplierCode.InputText(preferredSupplierCode);
             RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).SelectRow.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderDoc.Click();
-            WaitSeconds(5);
-                      
+            WaitSeconds(70);                      
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderPopupClose.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.EditPurchaseRequest.Click();
+            WaitSeconds(10);
             string orderNumber = RVWWebApp.EditPurchaseOrder.PONumber.GetElementText();
+            RVWWebApp.EditPurchaseOrder.GoBack.Click();
+            RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
+
+            RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
+            WaitSeconds(3);
+            RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
+            WaitSeconds(5);
+            RVWWebApp.ViewPurchaseOrder.FromPONumber.InputTextKeyByKey(orderNumber);
+            RVWWebApp.ViewPurchaseOrder.ToPONumber.InputTextKeyByKey(orderNumber);
+            RVWWebApp.ViewPurchaseOrder.Search.Click();
+            WaitSeconds(100);
+
+            RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.AssertElementTextEquals(orderNumber);    
+        }
+
+        [Test]
+        [Category("TestUserGroup")]
+        [Order(3)]
+
+        public void POAuthorizationProcess()
+        {
+            string dateFrom = TestHelper.GetTodaysDate("dd/MM/yyyy");
+            string dateTo = TestHelper.GetTodaysDate("dd/MM/yyyy");
+
+            RVWWebApp.Login.SignIntoAccountWIthTestUser();
+            RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
+            WaitSeconds(3);
+            RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
+            WaitSeconds(5);
+
+            RVWWebApp.ViewPurchaseOrder.FromPODate.InputText(dateFrom, true);
+            RVWWebApp.ViewPurchaseOrder.ToPODate.InputText(dateTo, true);
+            RVWWebApp.ViewPurchaseOrder.Search.Click();
+            WaitSeconds(100);
+
+            int totalRow = RVWWebApp.ViewPurchaseOrder.GetTotalRowCount();
+            string pRnumber = RVWWebApp.ViewPurchaseOrder.GetItemRow(totalRow).PONumber.GetElementText();
+            RVWWebApp.ViewPurchaseOrder.GoBack.Click();
+            WaitSeconds(5);
+
+            RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("Edit Purchase Order");
+            WaitSeconds(3);
+            RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
+            WaitSeconds(5);
+
+            RVWWebApp.SelectPurchaseOrder.PONumber.InputTextKeyByKey(pRnumber);
+            RVWWebApp.SelectPurchaseOrder.EditPurchaseOrder.Click();
+            WaitSeconds(5);
 
             //Do Specify Terms And Condition Step
             RVWWebApp.EditPurchaseOrder.SpecifyTermsAndConditions.Click();
             WaitSeconds(5);
             RVWWebApp.SpecifyTermsAndCondition.InsuranceAmount.InputText("0");
             RVWWebApp.SpecifyTermsAndCondition.SpecifyTermsAndConditionBtn.Click();
-            WaitSeconds(5);
+            WaitSeconds(50);
             RVWWebApp.SpecifyTermsAndCondition.PopupClose.Click();
             RVWWebApp.SpecifyTermsAndCondition.GoBack.Click();
 
@@ -149,7 +197,7 @@
             RVWWebApp.EditPurchaseOrder.TaxCalculationSummary.Click();
             WaitSeconds(5);
             RVWWebApp.TaxCalculationSummary.SaveDetails.Click();
-            WaitSeconds(5);
+            WaitSeconds(50);
             RVWWebApp.TaxCalculationSummary.PopupClose.Click();
             RVWWebApp.TaxCalculationSummary.GoBack.Click();
 
@@ -157,7 +205,7 @@
             RVWWebApp.EditPurchaseOrder.SpecifyScheduleAndDistribution.Click();
             WaitSeconds(5);
             RVWWebApp.SpecifyScheduleAndDistribution.SpecifySchedule.Click();
-            WaitSeconds(5);
+            WaitSeconds(50);
             RVWWebApp.SpecifyScheduleAndDistribution.PopupClose.Click();
             RVWWebApp.SpecifyScheduleAndDistribution.GoBack.Click();
 
@@ -165,7 +213,7 @@
             RVWWebApp.EditPurchaseOrder.SpecifyPOPRCoverage.Click();
             WaitSeconds(5);
             RVWWebApp.SpecifyPOPRCoverage.CoverPR.Click();
-            WaitSeconds(5);
+            WaitSeconds(50);
             RVWWebApp.SpecifyPOPRCoverage.PopupClose.Click();
             RVWWebApp.SpecifyPOPRCoverage.GoBack.Click();
 
@@ -180,22 +228,8 @@
             RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.EditPurchaseOrder.Default.Click();
             RVWWebApp.EditPurchaseOrder.EditAndApprovePO.Click();
-            WaitSeconds(5);
+            WaitSeconds(50);
             RVWWebApp.EditPurchaseOrder.PopupClose.Click();
-
-            RVWWebApp.EditPurchaseOrder.GoBack.Click();
-            RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
-
-            RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
-            WaitSeconds(3);
-            RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
-            WaitSeconds(5);
-            RVWWebApp.ViewPurchaseOrder.FromPONumber.InputTextKeyByKey(orderNumber);
-            RVWWebApp.ViewPurchaseOrder.ToPONumber.InputTextKeyByKey(orderNumber);
-            RVWWebApp.ViewPurchaseOrder.Search.Click();
-            WaitSeconds(3);
-
-            RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.AssertElementTextEquals(orderNumber);    
         }
     }
 }

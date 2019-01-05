@@ -48,7 +48,7 @@
             EditPurchaseRequest = new Link("Edit Purchase Request", By.Id("span_proconvord"), name, iframe);
             PRNumberFrom = new InputBox("PR Number From", By.Id("txtprnofrom"), name, iframe);
             PRNumberTo = new InputBox("PR Number To", By.XPath("//input[@id='txttoprno']"), name, iframe);
-            Search = new Button("Search", By.Id("ext-gen57"), name, iframe);
+            Search = new Button("Search", By.XPath("//em/button[contains(.,'Search')]"), name, iframe);
             SuccessfulOrderCreatePopupText = new Label("Successful Order Create Popup Text", By.XPath("//td[contains(@id,'msgRoot') and contains(.,'Purchase order')]"), name);
             SupplierCode = new InputBox("Supplier Code", By.Id("txtsuppliercode"), name, iframe);
         }

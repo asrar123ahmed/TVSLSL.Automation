@@ -25,7 +25,6 @@
             ACUsage = new InputBox(string.Format(locatorTextPrefix, rowIndex, "AC Usage"),
                                 BuildDynamicLocator("//*[@id='mltpoedtmain_cell_c{0}_r{1}']/div", 35, rowIndex),
                                 name, iframe);
-
         }
     }
 }
