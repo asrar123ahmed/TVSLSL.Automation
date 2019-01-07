@@ -53,7 +53,7 @@
             PRNumber = new InputBox("PR Number", By.Id("txtprno"), name, iframe);
             PRNumberFrom = new InputBox("PR Number From", By.Id("txtprnofrom"), name, iframe);
             PRNumberTo = new InputBox("PR Number To", By.Id("txtprnoto"), name, iframe);
-            Search = new Button("Search", By.Id("//em/button[contains(.,'Search')]"), name, iframe);
+            Search = new Button("Search", By.XPath("//em/button[contains(.,'Search')]"), name, iframe);
             RowCount = new Label("Row Count", By.XPath("//div[@id='ext-gen479']/div[contains(@class,'x-grid3-row ')]"), name, iframe);
             ViewPurchaseRequestBtn = new Button("View Purchase Request", By.Id("span_prvwentpgmainpglnk"), name, iframe);            
         }

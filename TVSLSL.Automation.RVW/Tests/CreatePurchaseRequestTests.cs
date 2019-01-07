@@ -85,6 +85,7 @@
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
             RVWWebApp.ViewPurchaseRequest.PRNumberFrom.InputTextKeyByKey(pRNumber);
             RVWWebApp.ViewPurchaseRequest.PRNumberTo.InputTextKeyByKey(pRNumber);
+            WaitSeconds(5);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
             WaitSeconds(20);
 
@@ -192,6 +193,7 @@
             WaitSeconds(50);
             RVWWebApp.SpecifyTermsAndCondition.PopupClose.Click();
             RVWWebApp.SpecifyTermsAndCondition.GoBack.Click();
+            WaitSeconds(5);
 
             //Do Tax calculation Summary Step
             RVWWebApp.EditPurchaseOrder.TaxCalculationSummary.Click();
@@ -200,6 +202,7 @@
             WaitSeconds(50);
             RVWWebApp.TaxCalculationSummary.PopupClose.Click();
             RVWWebApp.TaxCalculationSummary.GoBack.Click();
+            WaitSeconds(5);
 
             //Do Specify Schedule & Distribution Step
             RVWWebApp.EditPurchaseOrder.SpecifyScheduleAndDistribution.Click();
@@ -208,6 +211,7 @@
             WaitSeconds(50);
             RVWWebApp.SpecifyScheduleAndDistribution.PopupClose.Click();
             RVWWebApp.SpecifyScheduleAndDistribution.GoBack.Click();
+            WaitSeconds(5);
 
             //Do Specify PO - PR coverage Step
             RVWWebApp.EditPurchaseOrder.SpecifyPOPRCoverage.Click();
@@ -216,14 +220,15 @@
             WaitSeconds(50);
             RVWWebApp.SpecifyPOPRCoverage.PopupClose.Click();
             RVWWebApp.SpecifyPOPRCoverage.GoBack.Click();
+            WaitSeconds(5);
 
             //Do Refresh Step
             RVWWebApp.EditPurchaseOrder.Refresh.Click();
 
             //Do Edit & Approve PO Step
             RVWWebApp.EditPurchaseOrder.AnalysisCode.InputText("APR18");
-            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.Click();
-            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.ClearText();
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).RowCheck.Check();
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.Click();            
             RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates("ISPCHARG");
             RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.EditPurchaseOrder.Default.Click();
