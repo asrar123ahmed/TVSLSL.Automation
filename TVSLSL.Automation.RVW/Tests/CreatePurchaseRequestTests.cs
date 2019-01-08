@@ -19,6 +19,7 @@
             string needDate = TestHelper.GetTodaysDate("dd/MM/yyyy", 1);
 
             RVWWebApp.Login.SignIntoAccountWIthTestUser();
+            WaitSeconds(3);
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("Create Purchase Request");
             WaitSeconds(3);
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
@@ -79,6 +80,7 @@
             RVWWebApp.EditPurchaseRequest.PopupClose.Click();
             RVWWebApp.EditPurchaseRequest.GoBack.Click();
             RVWWebApp.CreatePurchaseRequest.GoBackBtn.Click();
+            WaitSeconds(3);
            
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Request");
             WaitSeconds(3);
@@ -104,6 +106,7 @@
             string dateTo = TestHelper.GetTodaysDate("dd/MM/yyyy");
 
             RVWWebApp.Login.SignIntoAccountWIthTestUser();
+            WaitSeconds(3);
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Request");
             WaitSeconds(3);
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
@@ -117,6 +120,7 @@
             int totalRow = RVWWebApp.ViewPurchaseRequest.GetTotalRowCount();
             string pRnumber = RVWWebApp.ViewPurchaseRequest.GetItemRow(totalRow).PRNumber.GetElementText();
             RVWWebApp.ViewPurchaseRequest.GoBack.Click();
+            WaitSeconds(3);
 
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("Convert Purchase Request To Order");
             WaitSeconds(3);
@@ -138,6 +142,7 @@
             string orderNumber = RVWWebApp.EditPurchaseOrder.PONumber.GetElementText();
             RVWWebApp.EditPurchaseOrder.GoBack.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
+            WaitSeconds(3);
 
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
             WaitSeconds(3);
@@ -161,6 +166,7 @@
             string dateTo = TestHelper.GetTodaysDate("dd/MM/yyyy");
 
             RVWWebApp.Login.SignIntoAccountWIthTestUser();
+            WaitSeconds(3);
             RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
             WaitSeconds(3);
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
@@ -224,11 +230,15 @@
 
             //Do Refresh Step
             RVWWebApp.EditPurchaseOrder.Refresh.Click();
+            WaitSeconds(3);
 
             //Do Edit & Approve PO Step
             RVWWebApp.EditPurchaseOrder.AnalysisCode.InputText("APR18");
-            RVWWebApp.EditPurchaseOrder.GetItemRow(1).RowCheck.Check();
-            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.Click();            
+            WaitSeconds(3);
+            RVWWebApp.EditPurchaseOrder.AllQuoteLineNo.MoveToElement();
+
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).RowCheck.Check();            
+            RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.Click();
             RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates("ISPCHARG");
             RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.EditPurchaseOrder.Default.Click();
