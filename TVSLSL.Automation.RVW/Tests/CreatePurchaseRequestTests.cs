@@ -9,7 +9,7 @@
     public class CreatePurchaseRequestTests : RVWTests
     {
         [Test]
-        [Category("TestUserGroup")]
+        [Category("UserGroup")]
         [Order(1)]
 
         public void CreatePR()
@@ -76,22 +76,22 @@
 
             RVWWebApp.CreatePurchaseRequest.EditPurchaseRequest.Click();
             RVWWebApp.EditPurchaseRequest.EditAndApprovePR.Click();
-            WaitSeconds(100);
-            RVWWebApp.EditPurchaseRequest.PopupClose.Click();
-            RVWWebApp.EditPurchaseRequest.GoBack.Click();
-            RVWWebApp.CreatePurchaseRequest.GoBackBtn.Click();
-            WaitSeconds(3);
-           
-            RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Request");
-            WaitSeconds(3);
-            RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
-            RVWWebApp.ViewPurchaseRequest.PRNumberFrom.InputTextKeyByKey(pRNumber);
-            RVWWebApp.ViewPurchaseRequest.PRNumberTo.InputTextKeyByKey(pRNumber);
-            WaitSeconds(5);
-            RVWWebApp.ViewPurchaseRequest.Search.Click();
-            WaitSeconds(20);
+            //WaitSeconds(100);
+            //RVWWebApp.EditPurchaseRequest.PopupClose.Click();
+            //RVWWebApp.EditPurchaseRequest.GoBack.Click();
+            //RVWWebApp.CreatePurchaseRequest.GoBackBtn.Click();
+            //WaitSeconds(3);
 
-            RVWWebApp.ViewPurchaseRequest.GetItemRow(1).PRNumber.AssertElementTextEquals(pRNumber);
+            //RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Request");
+            //WaitSeconds(3);
+            //RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
+            //RVWWebApp.ViewPurchaseRequest.PRNumberFrom.InputTextKeyByKey(pRNumber);
+            //RVWWebApp.ViewPurchaseRequest.PRNumberTo.InputTextKeyByKey(pRNumber);
+            //WaitSeconds(5);
+            //RVWWebApp.ViewPurchaseRequest.Search.Click();
+            //WaitSeconds(20);
+
+            //RVWWebApp.ViewPurchaseRequest.GetItemRow(1).PRNumber.AssertElementTextEquals(pRNumber);
         }
 
         [Test]
@@ -115,9 +115,12 @@
             RVWWebApp.ViewPurchaseRequest.PRDateFrom.InputText(dateFrom, true);
             RVWWebApp.ViewPurchaseRequest.PRDateTo.InputText(dateTo, true);
             RVWWebApp.ViewPurchaseRequest.Search.Click();
-            WaitSeconds(100);
+            //WaitSeconds(100);
+            RVWWebApp.ViewPurchaseRequest.GetItemRow(1).PRNumber.WaitForElementToBeVisible();
+            WaitSeconds(5);
 
             int totalRow = RVWWebApp.ViewPurchaseRequest.GetTotalRowCount();
+            WaitSeconds(5);
             string pRnumber = RVWWebApp.ViewPurchaseRequest.GetItemRow(totalRow).PRNumber.GetElementText();
             RVWWebApp.ViewPurchaseRequest.GoBack.Click();
             WaitSeconds(3);
@@ -127,33 +130,38 @@
             RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
             WaitSeconds(5);
 
-            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberFrom.InputText(pRnumber);
-            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberTo.InputText(pRnumber);            
+            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberFrom.InputTextKeyByKey(pRnumber);
+            RVWWebApp.ConvertPurchaseRequestToOrder.PRNumberTo.InputTextKeyByKey(pRnumber);            
             RVWWebApp.ConvertPurchaseRequestToOrder.Search.Click();
-            WaitSeconds(100);
-            string preferredSupplierCode = RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).PreferredSupplierCode.GetElementText();          
+            //WaitSeconds(100);
+            RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).PreferredSupplierCode.WaitForElementToBeVisible();
+            WaitSeconds(5);
+
+            string preferredSupplierCode = RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).PreferredSupplierCode.GetElementText();
+            WaitSeconds(5);
             RVWWebApp.ConvertPurchaseRequestToOrder.SupplierCode.InputText(preferredSupplierCode);
             RVWWebApp.ConvertPurchaseRequestToOrder.GetItemRow(1).SelectRow.Click();
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderDoc.Click();
-            WaitSeconds(70);                      
+            WaitSeconds(30); 
+            
             RVWWebApp.ConvertPurchaseRequestToOrder.CreateOrderPopupClose.Click();
-            RVWWebApp.ConvertPurchaseRequestToOrder.EditPurchaseRequest.Click();
-            WaitSeconds(10);
-            string orderNumber = RVWWebApp.EditPurchaseOrder.PONumber.GetElementText();
-            RVWWebApp.EditPurchaseOrder.GoBack.Click();
-            RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
-            WaitSeconds(3);
+            //RVWWebApp.ConvertPurchaseRequestToOrder.EditPurchaseRequest.Click();
+            //WaitSeconds(10);
+            //string orderNumber = RVWWebApp.EditPurchaseOrder.PONumber.GetElementText();
+            //RVWWebApp.EditPurchaseOrder.GoBack.Click();
+            //RVWWebApp.ConvertPurchaseRequestToOrder.ConvertPRGoBackBtn.Click();
+            //WaitSeconds(3);
 
-            RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
-            WaitSeconds(3);
-            RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
-            WaitSeconds(5);
-            RVWWebApp.ViewPurchaseOrder.FromPONumber.InputTextKeyByKey(orderNumber);
-            RVWWebApp.ViewPurchaseOrder.ToPONumber.InputTextKeyByKey(orderNumber);
-            RVWWebApp.ViewPurchaseOrder.Search.Click();
-            WaitSeconds(100);
+            //RVWWebApp.SelfServiceHome.HeaderSearchBox.InputTextKeyByKey("View Purchase Order");
+            //WaitSeconds(3);
+            //RVWWebApp.SelfServiceHome.FirstHeaderSearchSuggestionOption.Click();
+            //WaitSeconds(5);
+            //RVWWebApp.ViewPurchaseOrder.FromPONumber.InputTextKeyByKey(orderNumber);
+            //RVWWebApp.ViewPurchaseOrder.ToPONumber.InputTextKeyByKey(orderNumber);
+            //RVWWebApp.ViewPurchaseOrder.Search.Click();
+            //WaitSeconds(100);
 
-            RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.AssertElementTextEquals(orderNumber);    
+            //RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.AssertElementTextEquals(orderNumber);    
         }
 
         [Test]
@@ -175,7 +183,8 @@
             RVWWebApp.ViewPurchaseOrder.FromPODate.InputText(dateFrom, true);
             RVWWebApp.ViewPurchaseOrder.ToPODate.InputText(dateTo, true);
             RVWWebApp.ViewPurchaseOrder.Search.Click();
-            WaitSeconds(100);
+            //WaitSeconds(100);
+            RVWWebApp.ViewPurchaseOrder.GetItemRow(1).PONumber.WaitForElementToBeVisible();
 
             int totalRow = RVWWebApp.ViewPurchaseOrder.GetTotalRowCount();
             string pRnumber = RVWWebApp.ViewPurchaseOrder.GetItemRow(totalRow).PONumber.GetElementText();
@@ -196,7 +205,8 @@
             WaitSeconds(5);
             RVWWebApp.SpecifyTermsAndCondition.InsuranceAmount.InputText("0");
             RVWWebApp.SpecifyTermsAndCondition.SpecifyTermsAndConditionBtn.Click();
-            WaitSeconds(50);
+            WaitSeconds(30);           
+          
             RVWWebApp.SpecifyTermsAndCondition.PopupClose.Click();
             RVWWebApp.SpecifyTermsAndCondition.GoBack.Click();
             WaitSeconds(5);
@@ -205,7 +215,8 @@
             RVWWebApp.EditPurchaseOrder.TaxCalculationSummary.Click();
             WaitSeconds(5);
             RVWWebApp.TaxCalculationSummary.SaveDetails.Click();
-            WaitSeconds(50);
+            WaitSeconds(30);            
+           
             RVWWebApp.TaxCalculationSummary.PopupClose.Click();
             RVWWebApp.TaxCalculationSummary.GoBack.Click();
             WaitSeconds(5);
@@ -214,7 +225,8 @@
             RVWWebApp.EditPurchaseOrder.SpecifyScheduleAndDistribution.Click();
             WaitSeconds(5);
             RVWWebApp.SpecifyScheduleAndDistribution.SpecifySchedule.Click();
-            WaitSeconds(50);
+            WaitSeconds(30);
+            
             RVWWebApp.SpecifyScheduleAndDistribution.PopupClose.Click();
             RVWWebApp.SpecifyScheduleAndDistribution.GoBack.Click();
             WaitSeconds(5);
@@ -223,7 +235,8 @@
             RVWWebApp.EditPurchaseOrder.SpecifyPOPRCoverage.Click();
             WaitSeconds(5);
             RVWWebApp.SpecifyPOPRCoverage.CoverPR.Click();
-            WaitSeconds(50);
+            WaitSeconds(30);
+            
             RVWWebApp.SpecifyPOPRCoverage.PopupClose.Click();
             RVWWebApp.SpecifyPOPRCoverage.GoBack.Click();
             WaitSeconds(5);
@@ -243,7 +256,8 @@
             RVWWebApp.EditPurchaseOrder.GetItemRow(1).ACUsage.InputTextByCoordinates(Keys.Enter);
             RVWWebApp.EditPurchaseOrder.Default.Click();
             RVWWebApp.EditPurchaseOrder.EditAndApprovePO.Click();
-            WaitSeconds(50);
+            WaitSeconds(30);
+            
             RVWWebApp.EditPurchaseOrder.PopupClose.Click();
         }
     }
