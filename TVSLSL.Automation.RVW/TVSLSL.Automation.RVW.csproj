@@ -69,7 +69,8 @@
     <Compile Include="Application\Pages\Sections\View Purchase Request\ViewPurchaseSearchResultsItemRow.cs" />
     <Compile Include="Application\Pages\EditPurchaseRequest.cs" />
     <Compile Include="Application\Pages\ConvertPurchaseRequestToOrder.cs" />
-    <Compile Include="ViewPurchaseOrder.cs" />
+    <Compile Include="Application\Pages\SelectPurchaseOrder.cs" />
+    <Compile Include="Application\Pages\ViewPurchaseOrder.cs" />
     <Compile Include="Application\Pages\ViewPurchaseRequest.cs" />
     <Compile Include="Application\Pages\PRAdditionalDetails.cs" />
     <Compile Include="Application\Pages\Sections\CreatePurchaseRequest\ItemRow.cs" />

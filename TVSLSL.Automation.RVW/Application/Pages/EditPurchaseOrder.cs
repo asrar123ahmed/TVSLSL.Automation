@@ -21,6 +21,8 @@
 
         public Button EditAndApprovePO { get; private set; }
 
+        public Button AllQuoteLineNo { get; private set; }
+
         public Button GoBack { get; private set; }
 
         public Label PONumber { get; private set; }
@@ -35,7 +37,7 @@
 
         public Link SpecifyTermsAndConditions { get; private set; }
 
-        public Link TaxCalculationSummary { get; private set; }
+        public Link TaxCalculationSummary { get; private set; }        
 
         public EditPurchaseOrderItemRow GetItemRow(int index)
         {
@@ -49,14 +51,15 @@
             AnalysisCode = new InputBox("Analysis Code", By.Id("txtanalysiscode"), name, iframe);
             Default = new Button("Default", By.Id("ext-gen97"), name, iframe);
             EditAndApprovePO = new Button(" Edit And Approve PR", By.XPath("//button[@id='ext-gen118']"), name, iframe);
-            PONumber = new Label("PO Number", By.XPath("//div[@id='span_txtpono']//div"), name, iframe);
+            AllQuoteLineNo = new Button("Get All Quote Line Number", By.Id("ext-gen104"), name, iframe);
             GoBack = new Button("Go back", By.Id("ext-gen848"), name);
+            PONumber = new Label("PO Number", By.XPath("//div[@id='span_txtpono']//div"), name, iframe);            
             PopupClose = new Button("Popup Close", By.XPath("//button[text()='Close']"), name);
-            Refresh = new Button("Refresh", By.Id("refresh"), name, iframe);
+            Refresh = new Button("Refresh", By.XPath("//button[@id='ext-gen840']/div"), name);
             SpecifyPOPRCoverage = new Link("Specify PO - PR Coverage", By.Id("span_poedtmainlnk9"), name, iframe);
             SpecifyScheduleAndDistribution = new Link("Specify Schedule And Distribution", By.Id("span_poedtmainlnk2"), name, iframe);
             SpecifyTermsAndConditions = new Link("Specify Terms And Conditions", By.Id("span_poedtmainlnk3"), name, iframe);
-            TaxCalculationSummary = new Link("Tax Calculation Summary", By.Id("span_poedtmaintaxlnk"), name, iframe);
+            TaxCalculationSummary = new Link("Tax Calculation Summary", By.Id("span_poedtmaintaxlnk"), name, iframe);            
         }
     }
 }

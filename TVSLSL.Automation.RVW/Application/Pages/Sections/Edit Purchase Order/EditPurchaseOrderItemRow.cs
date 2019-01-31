@@ -15,6 +15,8 @@
 
         public InputBox ACUsage { get; private set; }
 
+        public  CheckBox RowCheck { get; private set; }
+
         private void InitialiseSection(int rowIndex)
         {
             iframe = "ilboinnerframe";
@@ -25,7 +27,9 @@
             ACUsage = new InputBox(string.Format(locatorTextPrefix, rowIndex, "AC Usage"),
                                 BuildDynamicLocator("//*[@id='mltpoedtmain_cell_c{0}_r{1}']/div", 35, rowIndex),
                                 name, iframe);
-
+            RowCheck = new CheckBox(string.Format(locatorTextPrefix, rowIndex, "Row Checkbox"),
+                                BuildDynamicLocator("//*[@id='mltpoedtmain_cell_csel_r{0}']/div", rowIndex),
+                                name, iframe);
         }
     }
 }
