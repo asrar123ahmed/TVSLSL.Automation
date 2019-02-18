@@ -13,6 +13,8 @@
 
         public static C1MarginReport C1MarginReport { get; private set; }
 
+        public static CustomerBalanceAgeingAnalysis CustomerBalanceAgeingAnalysis { get; private set; }
+
         public static ConvertPurchaseRequestToOrder ConvertPurchaseRequestToOrder { get; private set; }
 
         public static CreatePurchaseRequest CreatePurchaseRequest { get; private set; }
@@ -47,6 +49,7 @@
         {
             ApplyLeave = new ApplyLeave();
             C1MarginReport = new C1MarginReport();
+            CustomerBalanceAgeingAnalysis = new CustomerBalanceAgeingAnalysis();
             ConvertPurchaseRequestToOrder = new ConvertPurchaseRequestToOrder();
             CreatePurchaseRequest = new CreatePurchaseRequest();
             EditPurchaseOrder = new EditPurchaseOrder();

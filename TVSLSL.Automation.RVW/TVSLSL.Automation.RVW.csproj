@@ -58,6 +58,7 @@
     <Compile Include="Application\Pages\ApplyLeave.cs" />
     <Compile Include="Application\Pages\C1MarginReport.cs" />
     <Compile Include="Application\Pages\CreatePurchaseRequest.cs" />
+    <Compile Include="Application\Pages\Sections\CustomerBalanceAgeingAnalysis\CustomerBalanceAgeingAnalysisRow.cs" />
     <Compile Include="Application\Pages\Sections\Edit Purchase Order\EditPurchaseOrderItemRow.cs" />
     <Compile Include="Application\Pages\SpecifyPOPRCoverage.cs" />
     <Compile Include="Application\Pages\SpecifyScheduleAndDistribution.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Application\Pages\EditPurchaseRequest.cs" />
     <Compile Include="Application\Pages\ConvertPurchaseRequestToOrder.cs" />
     <Compile Include="Application\Pages\SelectPurchaseOrder.cs" />
+    <Compile Include="Application\Pages\CustomerBalanceAgeingAnalysis.cs" />
     <Compile Include="Application\Pages\ViewPurchaseOrder.cs" />
     <Compile Include="Application\Pages\ViewPurchaseRequest.cs" />
     <Compile Include="Application\Pages\PRAdditionalDetails.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\ApplyLeaveTests.cs" />
     <Compile Include="Tests\Common\RVWTests.cs" />
+    <Compile Include="Tests\CustomerBalanceAgeingAnalysisTests.cs" />
     <Compile Include="Tests\Data\Accounts\Account.cs" />
     <Compile Include="Tests\Data\Accounts\Accounts.cs" />
     <Compile Include="Tests\LoginTests.cs" />
