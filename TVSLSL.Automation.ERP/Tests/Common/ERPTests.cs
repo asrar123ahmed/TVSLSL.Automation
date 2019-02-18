@@ -22,7 +22,7 @@
         public void SuiteSetup()
         {
             XmlDocument config = new XmlDocument();
-            config.Load(@"C:\Users\asrar.ahmed\source\repos\TVSLSL.Automation\TVSLSL.Automation.ERP\Tests\Data\Config\Test Run Config.xml");
+            config.Load(@"D:\OneDrive - TVS Logistics Services Limited\Automation\TVSLSL\As_RVW_Transaction\TVSLSL.Automation.ERP\Tests\Data\Config\Test Run Config.xml");
 
             XmlNode rootNode = config.DocumentElement;
             TestRun.SelectedBrowser = rootNode.SelectSingleNode("//SelectedBrowser").InnerText;

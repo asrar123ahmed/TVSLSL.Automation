@@ -1,0 +1,9 @@
+03-Jan-19 03:28:48 PM TEST CASE STARTED: CreatePR
+03-Jan-19 03:28:52 PM Navigating to URL: http://testing.tvslsl.in/RVW/extui/vwrt/LaunchPanel.htm
+03-Jan-19 03:29:00 PM Input Text "tvsuser" (element 'User ID' on page 'Login')
+03-Jan-19 03:29:00 PM Input Text "*****************" (element 'Password' on page 'Login')
+03-Jan-19 03:29:01 PM Select Drop Down Option "Default" (By Text) (element 'User Type' on page 'Login')
+03-Jan-19 03:29:04 PM Click (element 'Sign In' on page 'Login')
+03-Jan-19 03:29:08 PM Input Text (Key-by-Key) "Create Purchase Request" (element 'Header Search' on page 'SelfServiceHome')
+03-Jan-19 03:29:28 PM Click (element 'First Search Suggestion Option' on page 'SelfServiceHome')
+03-Jan-19 03:29:34 PM Clear Text (element 'Type' on page 'CreatePurchaseRequest')
