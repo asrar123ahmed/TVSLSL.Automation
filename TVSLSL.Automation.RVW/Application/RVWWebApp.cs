@@ -19,9 +19,13 @@
 
         public static CreatePurchaseRequest CreatePurchaseRequest { get; private set; }
 
+        public static CreateVoucher CreateVoucher { get; private set; }
+
         public static EditPurchaseOrder EditPurchaseOrder { get; private set; }        
 
         public static EditPurchaseRequest EditPurchaseRequest { get; private set; }
+
+        public static EditVoucher EditVoucher { get; private set; }
 
         public static Login Login { get; private set; }
 
@@ -51,9 +55,11 @@
             C1MarginReport = new C1MarginReport();
             CustomerBalanceAgeingAnalysis = new CustomerBalanceAgeingAnalysis();
             ConvertPurchaseRequestToOrder = new ConvertPurchaseRequestToOrder();
+            CreateVoucher = new CreateVoucher();
             CreatePurchaseRequest = new CreatePurchaseRequest();
             EditPurchaseOrder = new EditPurchaseOrder();
             EditPurchaseRequest = new EditPurchaseRequest();
+            EditVoucher = new EditVoucher();
             Login = new Login();
             ManageRequest = new ManageRequest();
             PRAdditionalDetails = new PRAdditionalDetails();
