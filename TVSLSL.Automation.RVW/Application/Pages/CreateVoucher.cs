@@ -18,6 +18,8 @@
 
         public Button CreateVoucherBtn { get; private set; }
 
+        public Button CreateVoucherPopupClose { get; private set; }
+
         public Link EditVoucher { get; private set; }
 
         public InputBox PayAmount { get; private set; }
@@ -36,7 +38,8 @@
             iframe = "ilboinnerframe";
 
             BankCashCode = new InputBox("Bank Cash Code", By.Id("cilbobankcash"), name, iframe);
-            CreateVoucherBtn = new Button("Create Voucher", By.Id("ext-gen90"), name);
+            CreateVoucherBtn = new Button("Create Voucher", By.Id("ext-gen90"), name, iframe);
+            CreateVoucherPopupClose = new Button("Create Voucher Popup Close", By.XPath("//button[text()='Close']"), name);
             EditVoucher = new Link("Edit Voucher", By.Id("span_snpaddmainlnk2"), name, iframe);
             PayAmount = new InputBox("Pay Amount", By.Id("cilbopayamount"), name, iframe);
             PayMode = new InputBox("Pay Mode", By.Id("cilbopaymode"), name, iframe);

@@ -13,7 +13,7 @@
             InitialiseSection(rowIndex);
         }
 
-        public InputBox AccountCode { get; private set; }
+        public InputBox AnalysisCode { get; private set; }
 
         public InputBox Amount { get; private set; }
 
@@ -27,8 +27,8 @@
 
             string locatorTextPrefix = "Item Details Table Row {0} ({1})";
 
-            AccountCode = new InputBox(string.Format(locatorTextPrefix, rowIndex, "Account Code"),
-                                BuildDynamicLocator("//*[@id='mlaccinfo_cell_c{0}_r{1}']/div", 2, rowIndex),
+            AnalysisCode = new InputBox(string.Format(locatorTextPrefix, rowIndex, "Analysis Code"),
+                                BuildDynamicLocator("//*[@id='mlaccinfo_cell_c{0}_r{1}']/div", 10, rowIndex),
                                 name, iframe);
 
             Amount = new InputBox(string.Format(locatorTextPrefix, rowIndex, "Amount"),

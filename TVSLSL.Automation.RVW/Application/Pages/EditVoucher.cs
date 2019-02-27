@@ -14,7 +14,7 @@
 
         public Button EditAndAuthorizeVoucher { get; private set; }
 
-        public Button EditVoucherLink { get; private set; }
+        public Button EditVoucherBtn { get; private set; }
 
         public Button EditPopupClose { get; private set; }
 
@@ -22,12 +22,12 @@
 
         private void InitialisePage()
         {
-            iframe = "ilboinnerframe";
+            iframe = "ilboinnerframe";            
 
             EditAndAuthorizeVoucher = new Button("Edit And Authorize Voucher", By.Id("ext-gen97"), name, iframe);
-            EditVoucherLink = new Button("Edit Voucher", By.Id("ext-gen90"), name, iframe);
+            EditVoucherBtn = new Button("Edit Voucher", By.Id("ext-gen90"), name, iframe);
             EditPopupClose = new Button("Save Popup Close", By.XPath("//em/button[contains(.,'Close')]"), name);
-            VoucherAuthorizedMessage = new Label("VoucherAuthorizeMessage", By.XPath("//td[@id='msgRoot'][contains(.,'Voucher Number Authorized Successfully')]"), name);
+            VoucherAuthorizedMessage = new Label("VoucherAuthorizeMessage", By.XPath("//td[@id='msgRoot']"), name);
         }
     }
 }
