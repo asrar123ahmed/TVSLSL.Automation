@@ -54,6 +54,7 @@
     <Compile Include="Application\Pages\ApplyLeave.cs" />
     <Compile Include="Application\Pages\C1MarginReport.cs" />
     <Compile Include="Application\Pages\CreatePurchaseRequest.cs" />
+    <Compile Include="Application\Pages\CreateExpenseInvoice.cs" />
     <Compile Include="Application\Pages\EditVoucher.cs" />
     <Compile Include="Application\Pages\Sections\Create Voucher\CreateVoucherTableRow.cs" />
     <Compile Include="Application\Pages\Sections\CustomerBalanceAgeingAnalysis\CustomerBalanceAgeingAnalysisRow.cs" />
