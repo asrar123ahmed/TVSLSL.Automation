@@ -55,7 +55,7 @@
             GoBack = new Button("Go back", By.Id("ext-gen848"), name);
             PONumber = new Label("PO Number", By.XPath("//div[@id='span_txtpono']//div"), name, iframe);            
             PopupClose = new Button("Popup Close", By.XPath("//button[text()='Close']"), name);
-            Refresh = new Button("Refresh", By.XPath("//button[@id='ext-gen840']/div"), name);
+            Refresh = new Button("Refresh", By.XPath("//button[@id='ext-gen888']/div"), name);
             SpecifyPOPRCoverage = new Link("Specify PO - PR Coverage", By.Id("span_poedtmainlnk9"), name, iframe);
             SpecifyScheduleAndDistribution = new Link("Specify Schedule And Distribution", By.Id("span_poedtmainlnk2"), name, iframe);
             SpecifyTermsAndConditions = new Link("Specify Terms And Conditions", By.Id("span_poedtmainlnk3"), name, iframe);

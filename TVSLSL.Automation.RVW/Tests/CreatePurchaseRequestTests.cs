@@ -76,8 +76,8 @@
 
             RVWWebApp.CreatePurchaseRequest.EditPurchaseRequest.Click();
             RVWWebApp.EditPurchaseRequest.EditAndApprovePR.Click();
-            //WaitSeconds(100);
-            //RVWWebApp.EditPurchaseRequest.PopupClose.Click();
+            WaitSeconds(50);
+            RVWWebApp.EditPurchaseRequest.PopupClose.Click();
             //RVWWebApp.EditPurchaseRequest.GoBack.Click();
             //RVWWebApp.CreatePurchaseRequest.GoBackBtn.Click();
             //WaitSeconds(3);

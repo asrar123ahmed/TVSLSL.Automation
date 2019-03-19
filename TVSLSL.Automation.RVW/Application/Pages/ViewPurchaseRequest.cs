@@ -47,7 +47,7 @@
         {
             iframe = "ilboinnerframe";
 
-            GoBack = new Button("Go Back", By.Id("ext-gen848"), name);
+            GoBack = new Button("Go Back", By.Id("ext-gen896"), name);
             PRDateFrom = new InputBox("PR Date From", By.Id("txtprdatefrom"), name, iframe);
             PRDateTo = new InputBox("PR Date To", By.Id("txtprdateto"), name, iframe);
             PRNumber = new InputBox("PR Number", By.Id("txtprno"), name, iframe);

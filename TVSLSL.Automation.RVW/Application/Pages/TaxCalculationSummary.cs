@@ -25,7 +25,7 @@
         {
             iframe = "ilboinnerframe";
             
-            GoBack = new Button("Go back", By.Id("ext-gen848"), name);            
+            GoBack = new Button("Go back", By.Id("ext-gen896"), name);            
             PopupClose = new Button("Popup Close", By.XPath("//button[text()='Close']"), name);
             SaveDetails = new Button("Save Details", By.Id("ext-gen44"), name, iframe);            
         }

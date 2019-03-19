@@ -44,7 +44,7 @@
             iframe = "ilboinnerframe";
 
             FromPODate = new InputBox("From PO Date", By.Id("txtpodatefrom"), name, iframe);
-            GoBack = new Button("Go Back", By.Id("ext-gen848"), name);
+            GoBack = new Button("Go Back", By.Id("ext-gen896"), name);
             ToPODate = new InputBox("To PO Date", By.Id("txtpodateto"), name, iframe);
             FromPONumber = new InputBox("From PO Number", By.Id("txtponofrom"), name, iframe);
             ToPONumber = new InputBox("To PO Number", By.Id("txtponoto"), name, iframe);

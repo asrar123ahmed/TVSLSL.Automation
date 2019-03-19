@@ -45,7 +45,7 @@
         {
             iframe = "ilboinnerframe";
 
-            PRAdditionalPageGoBackBtn = new Button("GoBack Button", By.Id("ext-gen848"), name);
+            PRAdditionalPageGoBackBtn = new Button("GoBack Button", By.Id("ext-gen896"), name);
             LineOfBusiness = new InputBox("Line Of Business", By.Id("cmbline_of_business"), name, iframe);
             PRNumber = new Label("PR Number", By.XPath("//div[@id='span_dsppr_no']//div"), name, iframe);
             ProjectLocation = new InputBox("Project Location", By.Id("txtproject_location"), name, iframe);

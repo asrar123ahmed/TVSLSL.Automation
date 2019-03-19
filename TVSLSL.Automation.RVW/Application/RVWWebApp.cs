@@ -19,13 +19,19 @@
 
         public static CreatePurchaseRequest CreatePurchaseRequest { get; private set; }
 
+        public static CreateExpenseInvoice CreateExpenseInvoice { get; private set; }
+
         public static CreateVoucher CreateVoucher { get; private set; }
+
+        public static EditExpenseInvoice EditExpenseInvoice { get; private set; }
 
         public static EditPurchaseOrder EditPurchaseOrder { get; private set; }        
 
         public static EditPurchaseRequest EditPurchaseRequest { get; private set; }
 
         public static EditVoucher EditVoucher { get; private set; }
+
+        public static ExpenseInvoiceTaxCalculationSummary ExpenseInvoiceTaxCalculationSummary { get; private set; }
 
         public static Login Login { get; private set; }
 
@@ -55,11 +61,14 @@
             C1MarginReport = new C1MarginReport();
             CustomerBalanceAgeingAnalysis = new CustomerBalanceAgeingAnalysis();
             ConvertPurchaseRequestToOrder = new ConvertPurchaseRequestToOrder();
+            CreateExpenseInvoice = new CreateExpenseInvoice();
             CreateVoucher = new CreateVoucher();
             CreatePurchaseRequest = new CreatePurchaseRequest();
+            EditExpenseInvoice = new EditExpenseInvoice();
             EditPurchaseOrder = new EditPurchaseOrder();
             EditPurchaseRequest = new EditPurchaseRequest();
             EditVoucher = new EditVoucher();
+            ExpenseInvoiceTaxCalculationSummary = new ExpenseInvoiceTaxCalculationSummary();
             Login = new Login();
             ManageRequest = new ManageRequest();
             PRAdditionalDetails = new PRAdditionalDetails();

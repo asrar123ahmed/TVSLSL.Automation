@@ -55,12 +55,15 @@
     <Compile Include="Application\Pages\C1MarginReport.cs" />
     <Compile Include="Application\Pages\CreatePurchaseRequest.cs" />
     <Compile Include="Application\Pages\CreateExpenseInvoice.cs" />
+    <Compile Include="Application\Pages\EditExpenseInvoice.cs" />
     <Compile Include="Application\Pages\EditVoucher.cs" />
     <Compile Include="Application\Pages\Sections\Create Voucher\CreateVoucherTableRow.cs" />
+    <Compile Include="Application\Pages\Sections\CreateExpenseInvoice\CreateExpenseInvoiceTableRow.cs" />
     <Compile Include="Application\Pages\Sections\CustomerBalanceAgeingAnalysis\CustomerBalanceAgeingAnalysisRow.cs" />
     <Compile Include="Application\Pages\Sections\Edit Purchase Order\EditPurchaseOrderItemRow.cs" />
     <Compile Include="Application\Pages\SpecifyPOPRCoverage.cs" />
     <Compile Include="Application\Pages\SpecifyScheduleAndDistribution.cs" />
+    <Compile Include="Application\Pages\ExpenseInvoiceTaxCalculationSummary.cs" />
     <Compile Include="Application\Pages\TaxCalculationSummary.cs" />
     <Compile Include="Application\Pages\SpecifyTermsAndCondition.cs" />
     <Compile Include="Application\Pages\EditPurchaseOrder.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\ApplyLeaveTests.cs" />
     <Compile Include="Tests\Common\RVWTests.cs" />
+    <Compile Include="Tests\CreateExpenseInvoiceTests.cs" />
     <Compile Include="Tests\CreateSundryPaymentTests.cs" />
     <Compile Include="Tests\CustomerBalanceAgeingAnalysisTests.cs" />
     <Compile Include="Tests\Data\Accounts\Account.cs" />

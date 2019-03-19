@@ -27,7 +27,7 @@
         {
             iframe = "ilboinnerframe";
             
-            GoBack = new Button("Go back", By.Id("ext-gen848"), name);
+            GoBack = new Button("Go back", By.Id("ext-gen896"), name);
             InsuranceAmount = new InputBox("Insurance Amount", By.Id("txtinsuranceamount"), name, iframe);
             PopupClose = new Button("Popup Close", By.XPath("//button[text()='Close']"), name);
             SpecifyTermsAndConditionBtn = new Button("Specify Terms And Condition Btn", By.Id("ext-gen79"), name, iframe);            
