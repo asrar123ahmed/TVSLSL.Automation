@@ -18,7 +18,7 @@
         {
             //Test to verify that user can create expense invoice
 
-            int randomNumber = GetRandomNumber(10, 999);
+            int randomNumber = GetRandomNumber(9999, 99999);
             string supplierInvoiveNumber = string.Concat("PDLK", randomNumber);
 
             RVWWebApp.Login.SignIntoAccountWIthTestUser();
@@ -29,7 +29,8 @@
             WaitSeconds(5);
 
             RVWWebApp.CreateExpenseInvoice.SupplierCode.InputText("PANEXOKH88", true);
-            RVWWebApp.CreateExpenseInvoice.SupplierInvoiceNumber.InputText(supplierInvoiveNumber, true);
+            RVWWebApp.CreateExpenseInvoice.SupplierInvoiceNumber.InputTextKeyByKey(supplierInvoiveNumber);
+            RVWWebApp.CreateExpenseInvoice.SupplierInvoiceNumber.InputText(Keys.Enter);
             RVWWebApp.CreateExpenseInvoice.SupplierInvoiceAmount.InputText("11800", true);            
             RVWWebApp.CreateExpenseInvoice.SupplierAddressID.ClearText();
             RVWWebApp.CreateExpenseInvoice.SupplierAddressID.InputText("LUDHA7", true);
