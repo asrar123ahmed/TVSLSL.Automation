@@ -14,7 +14,7 @@
 
         public void ViewCustomerBalanceAgeing()
         {
-            //Test to verify that user able to create purchase request            
+            //Test to verify that user able to view customer balance ageing           
 
             RVWWebApp.Login.SignIntoAccountWIthTestUser();
             WaitSeconds(3);
