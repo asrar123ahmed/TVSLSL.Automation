@@ -6,7 +6,7 @@
     using TVSLSL.Automation.Common.Tests;
     using TVSLSL.Automation.Common.Tests.Utilities;
     using TVSLSL.Automation.Common.Web;
-    using TVSLSL.Automation.RVW.Application;
+    using TVSLSL.Automation.RVW.Application;    
 
     public class RVWTests
     {
@@ -34,7 +34,12 @@
         public void SuiteSetup()
         {
             XmlDocument config = new XmlDocument();
-            config.Load(@"C:\Users\asrar.ahmed\source\repos\TVSLSL.Automation\TVSLSL.Automation.RVW\Tests\Data\Config\Test Run Config.xml");            
+
+            string filepath = System.AppDomain.CurrentDomain.BaseDirectory;
+
+            config.Load(filepath + "Config\\Test Run Config.xml");
+
+            //config.load("C:\Users\asrar.ahmed\source\repos\TVSLSL.Automation\TVSLSL.Automation.RVW\Tests\Data\Config\Test Run Config.xml"); //Now config file need to update in folder bin\debug\config
 
             XmlNode rootNode = config.DocumentElement;
             TestRun.SelectedBrowser = rootNode.SelectSingleNode("//SelectedBrowser").InnerText;
