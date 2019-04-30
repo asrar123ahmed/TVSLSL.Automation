@@ -26,7 +26,7 @@
         {
             UserID.InputText(user);
             Password.InputText(password);
-            UserType.SelectDropDownOptionByText("Default");
+            //UserType.SelectDropDownOptionByText("Default"); // This step is removed in application
             WaitSeconds(3);
             SignIn.Click();
         }
